@@ -1,0 +1,72 @@
+{
+  "status": "published",
+  "display_name": "Maxrio9",
+  "recommended_receipt": "receipts/qwen.json",
+  "selection": "MiniCPM: middle greedy-chat run of three complete suites. Qwen: retained balanced confirmation from the earlier campaign.",
+  "model": {
+    "config_sha256": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+    "drafter_repo_id": "z-lab/Qwen3.8-27B-DFlash2",
+    "family": "qwen3_5",
+    "local": false,
+    "quantization": "mlx-affine-4bit-g64",
+    "repo_id": "TensorFold/Qwen3.8-27B-MLX-4bit",
+    "revision": "22d8d538154e0e5b6f8dcb1fcc74a60a0798104c",
+    "tokenizer_sha256": "49d8f5dc9c3e0a89091f4f189ecfd308c8f0250929b815e125d4700bded4df2c"
+  },
+  "drafter_revision": "50307d4c4cde6860d4eee73e2547cd786fe8e8a4",
+  "engine": {
+    "repository": "https://github.com/BobClawblaw/TensorFold.git",
+    "commit": "bfcc84ab22669fd92586572d5e57ad10a5eea716",
+    "runtime_version": "1.0.12",
+    "binary_sha256": "b09a48a2d4a3b1dc3409653ae3234deb4605c2bf9327fda2f841a324e4596c63",
+    "local_source_changes": false,
+    "zig": "0.17.0",
+    "cuda_toolkit": "13.0.88",
+    "sm": "120",
+    "build_command": "python3 -m ziglang build native -Dnvcc=/usr/local/cuda/bin/nvcc -Dsm=120 -Dversion=1.0.12 -j2"
+  },
+  "helper_recipe": {
+    "repository": "https://github.com/BobClawblaw/qwen38-27b-vision-rtx-5090.git",
+    "commit": "cada62369abb62acb761f0a3f2702d7ba217fd95",
+    "kernel_manifest": "source/qwen-helper-kernel-manifest.json"
+  },
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "CUDA_MODULE_LOADING": "LAZY",
+    "NVIDIA_DRIVER_CAPABILITIES": "compute,utility",
+    "TENSORFOLD_CUDA_MEMORY_LIMIT_GB": "24",
+    "TENSORFOLD_CUDA_KERNELS": "<pinned-recipe>/kernels/sm120",
+    "TF_QWEN27_GEMV_ROWS": "0"
+  },
+  "speculation": "DFlash2, default 16-row verification window (up to 15 proposals); upstream copying also allowed",
+  "cache": {
+    "kv": "BF16 native benchmark default",
+    "prefix_reuse": "disabled, all measured cached_tokens=0"
+  },
+  "command": [
+    "tensorfold-native",
+    "benchmark",
+    "TensorFold/Qwen3.8-27B-MLX-4bit",
+    "--backend",
+    "cuda",
+    "--drafter",
+    "z-lab/Qwen3.8-27B-DFlash2",
+    "--context",
+    "2048",
+    "--output",
+    "new-benchmark.json"
+  ],
+  "conditions": {
+    "gpu": "RTX PRO 4500 Blackwell 32 GB",
+    "power_limit_w": 200,
+    "display": "active",
+    "compute_mode": "Default",
+    "ecc": "off",
+    "pcie": "Gen3 riser",
+    "additional_vram_limit_bytes": 28000000000,
+    "engine_admission_limit_gib": 24,
+    "sampled_growth_stop_mib": 25000
+  },
+  "qualification": "All standard cells complete and truncated token hashes match serial control; no full-token/logit proof or broad quality qualification.",
+  "public_result": "https://tensorfold.dev/benchmarks?result=6ce0baf0-f241-4907-bdff-ef82ab02054a"
+}

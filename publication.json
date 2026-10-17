@@ -1,0 +1,18 @@
+[
+  {
+    "recipe": "minicpm",
+    "public_url": "https://tensorfold.dev/benchmarks?result=606a118f-31aa-411d-b7f4-3feb9e81568f",
+    "public_receipt_matches_original": true,
+    "display_name": "Maxrio9",
+    "protocol_complete": true,
+    "result_id": "606a118f-31aa-411d-b7f4-3feb9e81568f"
+  },
+  {
+    "recipe": "qwen",
+    "public_url": "https://tensorfold.dev/benchmarks?result=6ce0baf0-f241-4907-bdff-ef82ab02054a",
+    "public_receipt_matches_original": true,
+    "display_name": "Maxrio9",
+    "protocol_complete": true,
+    "result_id": "6ce0baf0-f241-4907-bdff-ef82ab02054a"
+  }
+]

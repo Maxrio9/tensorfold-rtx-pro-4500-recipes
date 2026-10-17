@@ -1,0 +1,57 @@
+{
+  "max_drafts": 5,
+  "confidence": 0.7,
+  "same_binary_and_source_as_primary": true,
+  "queued_for_upload": false,
+  "measured_group": {
+    "model": "mini",
+    "depth": 5,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 356.15939530201956,
+        "minimum": 355.8435815214955,
+        "maximum": 356.7678456685986,
+        "run_medians": [
+          355.8435815214955,
+          356.7678456685986,
+          356.15939530201956
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 322.4841508050466,
+        "minimum": 320.61888064211166,
+        "maximum": 323.06792354481286,
+        "run_medians": [
+          322.4841508050466,
+          323.06792354481286,
+          320.61888064211166
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 509.10387535859377,
+        "minimum": 508.5800384297437,
+        "maximum": 509.58401943076245,
+        "run_medians": [
+          508.5800384297437,
+          509.58401943076245,
+          509.10387535859377
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 438.85281629647267,
+        "minimum": 434.68904493600564,
+        "maximum": 439.53357999578634,
+        "run_medians": [
+          439.53357999578634,
+          438.85281629647267,
+          434.68904493600564
+        ]
+      }
+    },
+    "representative_run": "20261017T211505Z-mini-d5-c07-c",
+    "peak_additional_gb": 20.859322368
+  }
+}

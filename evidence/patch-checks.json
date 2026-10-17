@@ -1,0 +1,18 @@
+[
+  {
+    "patch": "qwen-b4.patch",
+    "applies_to_pinned_base": true
+  },
+  {
+    "patch": "qwen-b2.patch",
+    "applies_to_pinned_base": true
+  },
+  {
+    "patch": "qwen-b8.patch",
+    "applies_to_pinned_base": true
+  },
+  {
+    "patch": "python.patch",
+    "applies_to_pinned_base": true
+  }
+]

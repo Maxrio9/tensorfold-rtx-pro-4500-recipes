@@ -1,0 +1,8 @@
+{
+  "benchmark_suite.zig": "ec4f459bef437248bf2873cab06453943c8a183afec9a0f51538d3a18f7ef247",
+  "benchmark_stream.zig": "7fe157a8c9c9d39526c3a90dece536163bf9070e5b87934c5a649b792331e012",
+  "benchmark_host.zig": "4dba5181fb8b0af57a23777cb8a69ef87c24fdf09de3f9f436001e44b0db76a7",
+  "benchmark_check.zig": "920b4ab2d3646d3c5099b223d9ec6a2ac0b7370d3f83324b9fe6239f8f8fffaf",
+  "benchmark_receipt.zig": "22083ac44bcf40abdf4c794b4d1d0edf8c4349ae9d6880159f5910460bc239b4",
+  "benchmark_model.zig": "8eb5b00efa0fbeb225732fd4d3a9b34c2aa127be39852a786322d94cff43f528"
+}

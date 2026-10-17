@@ -1,0 +1,2072 @@
+[
+  {
+    "run": "20261017T210604Z-mini-c03-pilot",
+    "run_id": "d8758a1f-e683-4088-a124-0f1c5db95aa1",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 340.5570327918,
+        "ttft_median_ms": 24.681942,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 308.01871647344615,
+        "ttft_median_ms": 24.858456,
+        "prefill_median_ms": 23.599999999999998,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 463.10181279188765,
+        "ttft_median_ms": 23.725158999999998,
+        "prefill_median_ms": 22.700000000000003,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 415.534279400162,
+        "ttft_median_ms": 24.221266,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.854079488,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T210630Z-mini-c05-pilot",
+    "run_id": "1697e3c8-0ae9-4963-b3d0-997611d6d558",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.5,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 348.86020544166814,
+        "ttft_median_ms": 24.423357,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 316.0806342472519,
+        "ttft_median_ms": 24.931755,
+        "prefill_median_ms": 23.7,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 474.35969844317776,
+        "ttft_median_ms": 24.346266,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 427.62879599521034,
+        "ttft_median_ms": 24.451778,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.854079488,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T210656Z-mini-c07-pilot",
+    "run_id": "083c75b8-5c77-4551-b33f-049c88b8a7eb",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 352.01483323693463,
+        "ttft_median_ms": 24.10996,
+        "prefill_median_ms": 22.9,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 320.33913678808267,
+        "ttft_median_ms": 24.980334,
+        "prefill_median_ms": 23.8,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 485.5717116858513,
+        "ttft_median_ms": 24.269952,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 427.8509233021247,
+        "ttft_median_ms": 23.987119,
+        "prefill_median_ms": 22.9,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.854079488,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T210721Z-qwen-b4-pilot",
+    "run_id": "245d1073-8fb2-47b7-95ad-fc5d4e776232",
+    "model": "qwen",
+    "branch": 4,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 137.4024559489558,
+        "ttft_median_ms": 86.225437,
+        "prefill_median_ms": 85.008089,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 131.49720760497115,
+        "ttft_median_ms": 83.856698,
+        "prefill_median_ms": 82.778271,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 195.81295868782428,
+        "ttft_median_ms": 82.043807,
+        "prefill_median_ms": 81.093233,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 229.95812330912244,
+        "ttft_median_ms": 82.070322,
+        "prefill_median_ms": 81.069477,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.8928768,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b4"
+    }
+  },
+  {
+    "run": "20261017T210810Z-qwen-b2-pilot",
+    "run_id": "16e32965-7583-41d3-82ff-fc8ab5da8e14",
+    "model": "qwen",
+    "branch": 2,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 127.65597402640064,
+        "ttft_median_ms": 84.35443099999999,
+        "prefill_median_ms": 83.258985,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 123.61240776150598,
+        "ttft_median_ms": 83.81267700000001,
+        "prefill_median_ms": 82.73800100000001,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 195.04516413043677,
+        "ttft_median_ms": 82.86754,
+        "prefill_median_ms": 81.85998599999999,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 227.14793863312497,
+        "ttft_median_ms": 84.17480400000001,
+        "prefill_median_ms": 83.16953000000001,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.775436288,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b2"
+    }
+  },
+  {
+    "run": "20261017T210901Z-qwen-b8-pilot",
+    "run_id": "f5e7e015-8350-4194-aa7a-5e687f9f6897",
+    "model": "qwen",
+    "branch": 8,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 141.8285240573041,
+        "ttft_median_ms": 84.615665,
+        "prefill_median_ms": 83.379577,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 131.67771673103013,
+        "ttft_median_ms": 84.84576200000001,
+        "prefill_median_ms": 83.736006,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 194.93415454500862,
+        "ttft_median_ms": 82.88237099999999,
+        "prefill_median_ms": 81.91676700000001,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 220.84209614923935,
+        "ttft_median_ms": 84.421377,
+        "prefill_median_ms": 83.455274,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.904411136,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b8"
+    }
+  },
+  {
+    "run": "20261017T210957Z-mini-d4-c09-followup",
+    "run_id": "98b352d1-5f0e-489c-b935-4594c4f092ae",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.9,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 342.93080831397793,
+        "ttft_median_ms": 24.895742,
+        "prefill_median_ms": 23.7,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 312.422219119291,
+        "ttft_median_ms": 24.7874,
+        "prefill_median_ms": 23.5,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 459.68369565097476,
+        "ttft_median_ms": 25.206426,
+        "prefill_median_ms": 24.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 417.92406976202943,
+        "ttft_median_ms": 23.984319,
+        "prefill_median_ms": 22.8,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.931674112,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211023Z-mini-d3-c07-followup",
+    "run_id": "c58ef77b-18f0-4cfc-a47f-11fc0a6d2f34",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 3,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 340.46260879012027,
+        "ttft_median_ms": 25.248124999999998,
+        "prefill_median_ms": 24.0,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 312.1031069699068,
+        "ttft_median_ms": 25.902136,
+        "prefill_median_ms": 24.6,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 458.3374881027496,
+        "ttft_median_ms": 24.807758999999997,
+        "prefill_median_ms": 23.7,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 394.3770121530803,
+        "ttft_median_ms": 26.308271,
+        "prefill_median_ms": 25.1,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.959985664,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211049Z-mini-d5-c07-followup",
+    "run_id": "2757f64a-78fc-4b70-9113-2fb972c9cdc7",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 5,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 355.8435815214955,
+        "ttft_median_ms": 24.355531,
+        "prefill_median_ms": 23.099999999999998,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 322.4841508050466,
+        "ttft_median_ms": 24.715657,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 508.5800384297437,
+        "ttft_median_ms": 24.215819,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 439.53357999578634,
+        "ttft_median_ms": 23.977357,
+        "prefill_median_ms": 22.9,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.859322368,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211126Z-mini-d6-c07-refine",
+    "run_id": "f4705379-7d49-4da6-aacb-b17368e0a341",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 6,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 361.5447203192765,
+        "ttft_median_ms": 24.447951999999997,
+        "prefill_median_ms": 23.099999999999998,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 320.60761656073373,
+        "ttft_median_ms": 24.702515000000002,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 501.25660214162104,
+        "ttft_median_ms": 23.863603,
+        "prefill_median_ms": 22.8,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 443.67390562981205,
+        "ttft_median_ms": 24.531563,
+        "prefill_median_ms": 23.099999999999998,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.832059392,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211151Z-mini-d7-c07-refine",
+    "run_id": "d7ad64fe-a520-44cc-bf1d-e0a7efa3c1ce",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 7,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 359.31737949513865,
+        "ttft_median_ms": 24.074965,
+        "prefill_median_ms": 22.8,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 317.3494353898055,
+        "ttft_median_ms": 24.635333,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 498.5539706023018,
+        "ttft_median_ms": 24.124125,
+        "prefill_median_ms": 23.099999999999998,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 431.85090433897875,
+        "ttft_median_ms": 25.374224,
+        "prefill_median_ms": 24.299999999999997,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.906508288,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211216Z-mini-d5-c06-refine",
+    "run_id": "01a80856-82bb-4bee-b047-031e2b92bd35",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.6,
+    "depth": 5,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 359.32796066730197,
+        "ttft_median_ms": 24.670092,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 318.7853720263983,
+        "ttft_median_ms": 24.617652,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 497.645482124222,
+        "ttft_median_ms": 24.443469,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 436.7903630767478,
+        "ttft_median_ms": 24.584920999999998,
+        "prefill_median_ms": 23.599999999999998,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.820525056,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211241Z-mini-d5-c08-refine",
+    "run_id": "532e8eac-dbb1-422b-b440-2bbd1cf20e79",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.8,
+    "depth": 5,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 358.57421510087016,
+        "ttft_median_ms": 25.028997,
+        "prefill_median_ms": 23.8,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 323.3786758257517,
+        "ttft_median_ms": 24.706232,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 494.94091581677674,
+        "ttft_median_ms": 24.097483,
+        "prefill_median_ms": 23.0,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 435.22935734594626,
+        "ttft_median_ms": 24.757754,
+        "prefill_median_ms": 23.7,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.822622208,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211323Z-mini-control-b",
+    "run_id": "cc110752-7bd1-4e92-857e-72dff1f30c10",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 340.7137453251068,
+        "ttft_median_ms": 24.334566,
+        "prefill_median_ms": 23.0,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 307.4689129305276,
+        "ttft_median_ms": 24.639539,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 464.35405744763324,
+        "ttft_median_ms": 24.108842,
+        "prefill_median_ms": 23.099999999999998,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 416.15874559766263,
+        "ttft_median_ms": 24.233034,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.854079488,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211349Z-mini-d5-c07-b",
+    "run_id": "ef7ec309-0d7d-492d-91af-bd29a8666cb8",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 5,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 356.7678456685986,
+        "ttft_median_ms": 24.270872999999998,
+        "prefill_median_ms": 23.099999999999998,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 323.06792354481286,
+        "ttft_median_ms": 24.427256,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 509.58401943076245,
+        "ttft_median_ms": 24.05844,
+        "prefill_median_ms": 22.9,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 438.85281629647267,
+        "ttft_median_ms": 24.743351,
+        "prefill_median_ms": 23.8,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.822622208,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211415Z-mini-d6-c07-b",
+    "run_id": "d54e6b5a-2d4b-403e-9b9d-93eeca94d5ba",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 6,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 364.0053433300754,
+        "ttft_median_ms": 23.991819,
+        "prefill_median_ms": 22.599999999999998,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 320.32191855373554,
+        "ttft_median_ms": 25.188386,
+        "prefill_median_ms": 23.900000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 499.0247969355087,
+        "ttft_median_ms": 23.902838,
+        "prefill_median_ms": 22.9,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 445.97938617516996,
+        "ttft_median_ms": 23.619525,
+        "prefill_median_ms": 22.599999999999998,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.831010816,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211440Z-mini-d6-c07-c",
+    "run_id": "85c9f3dd-5d0a-4ff9-8bfe-a2027b9d7374",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 6,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 360.9644545561677,
+        "ttft_median_ms": 24.169551000000002,
+        "prefill_median_ms": 22.9,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 320.77871970276595,
+        "ttft_median_ms": 24.825,
+        "prefill_median_ms": 23.400000000000002,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 497.37446746310815,
+        "ttft_median_ms": 23.833845999999998,
+        "prefill_median_ms": 22.8,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 444.50037518097747,
+        "ttft_median_ms": 24.516845,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.831010816,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211505Z-mini-d5-c07-c",
+    "run_id": "4201c815-4413-435a-a7c5-1a3625512c07",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.7,
+    "depth": 5,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 356.15939530201956,
+        "ttft_median_ms": 24.636036,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 320.61888064211166,
+        "ttft_median_ms": 24.996692,
+        "prefill_median_ms": 23.8,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 509.10387535859377,
+        "ttft_median_ms": 23.787095,
+        "prefill_median_ms": 22.8,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 434.68904493600564,
+        "ttft_median_ms": 24.256311999999998,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.846739456,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211531Z-mini-control-c",
+    "run_id": "40409ea9-3e64-4a1a-9233-ad55b5fa8adc",
+    "model": "mini",
+    "branch": 4,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 340.74865159311065,
+        "ttft_median_ms": 24.999351,
+        "prefill_median_ms": 23.8,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 306.1426830630957,
+        "ttft_median_ms": 24.516874,
+        "prefill_median_ms": 23.3,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 462.6616255999408,
+        "ttft_median_ms": 23.815865,
+        "prefill_median_ms": 22.8,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 414.1347906915264,
+        "ttft_median_ms": 24.261311,
+        "prefill_median_ms": 23.2,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.855128064,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    }
+  },
+  {
+    "run": "20261017T211557Z-qwen-b4-confirm-b",
+    "run_id": "a3c8f6db-2d7d-4468-9696-5dd764f1b390",
+    "model": "qwen",
+    "branch": 4,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 140.01228370043123,
+        "ttft_median_ms": 83.731553,
+        "prefill_median_ms": 82.652728,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 131.07406077244613,
+        "ttft_median_ms": 84.086818,
+        "prefill_median_ms": 83.020653,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 195.24391743358916,
+        "ttft_median_ms": 82.667728,
+        "prefill_median_ms": 81.742595,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 229.73113129659563,
+        "ttft_median_ms": 81.913269,
+        "prefill_median_ms": 80.92721499999999,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.81947648,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b4"
+    }
+  },
+  {
+    "run": "20261017T211646Z-qwen-b8-confirm-b",
+    "run_id": "a83e8229-5296-42d1-80f4-6cfa559a00e7",
+    "model": "qwen",
+    "branch": 8,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 141.98099278623474,
+        "ttft_median_ms": 84.32869699999999,
+        "prefill_median_ms": 83.254072,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 132.65797266960888,
+        "ttft_median_ms": 83.966853,
+        "prefill_median_ms": 82.940798,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 195.02326478413437,
+        "ttft_median_ms": 82.011326,
+        "prefill_median_ms": 81.023842,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 229.43802800854561,
+        "ttft_median_ms": 82.11156799999999,
+        "prefill_median_ms": 81.15420499999999,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.768096256,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b8"
+    }
+  },
+  {
+    "run": "20261017T211736Z-qwen-b8-confirm-c",
+    "run_id": "2b2ca1ec-48f4-406d-90ab-e9428d4e77f7",
+    "model": "qwen",
+    "branch": 8,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 142.0024493662799,
+        "ttft_median_ms": 84.78479,
+        "prefill_median_ms": 83.577923,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 132.4377764855094,
+        "ttft_median_ms": 84.83297200000001,
+        "prefill_median_ms": 83.599575,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 195.04308434041656,
+        "ttft_median_ms": 82.449178,
+        "prefill_median_ms": 81.36041300000001,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 227.67233076736198,
+        "ttft_median_ms": 82.603662,
+        "prefill_median_ms": 81.56222700000001,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.800602112,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b8"
+    }
+  },
+  {
+    "run": "20261017T211825Z-qwen-b4-confirm-c",
+    "run_id": "4f2ca1cd-7d29-42f4-b594-89f5e58ae90b",
+    "model": "qwen",
+    "branch": 4,
+    "confidence": 0.3,
+    "depth": 4,
+    "cells": [
+      {
+        "fixture": "chat",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 139.84472315389306,
+        "ttft_median_ms": 84.469102,
+        "prefill_median_ms": 83.366377,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "chat",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 130.82680341870324,
+        "ttft_median_ms": 83.957566,
+        "prefill_median_ms": 82.83998,
+        "input_tokens": [
+          31
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 0,
+        "complete": true,
+        "delivery_median_tps": 194.8450726998065,
+        "ttft_median_ms": 82.31812400000001,
+        "prefill_median_ms": 81.31045900000001,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      },
+      {
+        "fixture": "code",
+        "temperature": 1,
+        "complete": true,
+        "delivery_median_tps": 228.92375025142786,
+        "ttft_median_ms": 82.503287,
+        "prefill_median_ms": 81.502514,
+        "input_tokens": [
+          14
+        ],
+        "cached_tokens": [
+          0
+        ]
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "standard_candidate": true,
+      "problems": [],
+      "publication": "Deferred. This command never uploads.",
+      "model": "TensorFold/Qwen3.8-27B-MLX-4bit",
+      "gpus": [
+        "NVIDIA RTX PRO 4500 Blackwell"
+      ]
+    },
+    "guard_abort": false,
+    "peak_additional_gb": 20.650655744,
+    "matching_truncated_token_fingerprints": 20,
+    "compared_requests": 20,
+    "other_private_containers": [],
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "none",
+      "tensorfold_version": "1.0.12+frontier-b4"
+    }
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "configurations": [
+    {
+      "run": "20261017T205937Z-mini-confidence07-parity",
+      "pairs": 12,
+      "requests": 24,
+      "all_equal": true
+    },
+    {
+      "run": "20261017T210122Z-qwen-default-fullhash-parity",
+      "pairs": 12,
+      "requests": 24,
+      "all_equal": true
+    },
+    {
+      "run": "20261017T211932Z-mini-d6-c07-final-parity",
+      "pairs": 12,
+      "requests": 24,
+      "all_equal": true
+    },
+    {
+      "run": "20261017T212041Z-mini-d5-c07-final-parity",
+      "pairs": 12,
+      "requests": 24,
+      "all_equal": true
+    },
+    {
+      "run": "20261017T212151Z-qwen-b8-final-parity",
+      "pairs": 12,
+      "requests": 24,
+      "all_equal": true
+    }
+  ],
+  "total_pairs": 60,
+  "total_requests": 120,
+  "all_equal": true,
+  "method": "Full token arrays for MiniCPM, full server-reported SHA256 for Qwen; measured fixture and unseen prompts; draft/plain pairs"
+}

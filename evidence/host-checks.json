@@ -1,0 +1,13 @@
+{
+  "native_command": "zig build test-cuda-host -j2",
+  "native_returncode": 0,
+  "python_tests_passed": 22,
+  "python_tests_skipped": 1,
+  "confidence_forwarding_test_cases": 3,
+  "notes": [
+    "Expected refusal warnings and unavailable JPEG tests retained in logs",
+    "Branch 8 host-policy path covered; branch 2 alternate expectation still to check if promoted",
+    "Native test runner exited 0; expected mock/refusal warnings retained in host-tests.log",
+    "JPEG pixel cases skipped because libjpeg-turbo 3.1.4.1 was unavailable"
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "display_name": "Maxrio9",
+  "status": "published",
+  "model": {
+    "config_sha256": "e62dde4a3afc072f67d454633cacf5b4ba5bee2d98c4fd4cf53da06bf66afdb4",
+    "drafter_repo_id": "TensorFold/Qwen3.6-35B-A3B-MLX-4bit-MTP",
+    "family": "minicpmv4_7",
+    "local": false,
+    "quantization": "mlx-affine-4bit-g64",
+    "repo_id": "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+    "revision": "0aee82655c3bdb7135099cd368af7e92235d066f",
+    "tokenizer_sha256": "3cb94547b18d3ecf867d5243dce48be755f957340cbdd56dba22da286a18033a"
+  },
+  "mtp_revision": "f84b054c5677b6e59bdb969ae61915b0983d68bb",
+  "native_controller": {
+    "repository": "https://github.com/BobClawblaw/TensorFold.git",
+    "commit": "bfcc84ab22669fd92586572d5e57ad10a5eea716",
+    "version": "1.0.12+frontier-b4",
+    "binary_sha256": "50b7b74426ac40f732df6ceabd3345da72fda2d2f90d939ae4a644a706967600",
+    "patch_sha256": "6571ba73600d245bc2e870802c5655bba201b74b515c7a04cc146d3b6be800d3",
+    "zig": "0.17.0",
+    "cuda_toolkit": "13.0.88",
+    "sm": "120"
+  },
+  "inference_engine": {
+    "repository": "https://github.com/jkuepker/TensorFold.git",
+    "commit": "93fcf31c5bd861e5edb98ebf89d40e74b60b2d22",
+    "runtime": {
+      "backend": "cuda",
+      "dependencies": {
+        "driver": "610.57.04"
+      },
+      "platform": "linux",
+      "python_version": "3.12.3",
+      "tensorfold_version": "0.6.6+mini-managed2"
+    },
+    "patch_sha256": "54eddda60742193e1c2917e667526db65b04f6baf91183a54c78b954da1306b9",
+    "image_id": "sha256:c7c19506b5040f6222ffca0667f2bfc7f3a46b8dc694b53411c124d8c1edcdcf",
+    "torch": "2.11.0+cu130",
+    "triton": "3.6.0"
+  },
+  "speculation": {
+    "method": "Qwen3.6 MTP sidecar verified by MiniCPM target; upstream copy proposals remain enabled",
+    "max_drafts": 6,
+    "confidence": 0.7,
+    "upstream_default_depth": 3
+  },
+  "precision": "affine4/g64 checkpoint, 8-bit routers, BF16 activations and KV; no new precision or CUDA kernel changes",
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONUNBUFFERED": "1",
+    "TORCH_CUDA_ARCH_LIST": "12.0",
+    "MAX_JOBS": "2",
+    "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+    "TENSORFOLD_CUDA_MEMORY_LIMIT_GB": "24",
+    "TENSORFOLD_MEMORY_RESERVE_GIB": "2",
+    "TF_MINICPM_MANAGED_ADAPTER": "<executable adapter.py>",
+    "TF_MINICPM_KEEP_LOGS": "1",
+    "TF_MINICPM_MTP_DRAFTS": "6",
+    "TF_BENCHMARK_NO_PREFIX_REUSE": "1",
+    "CUDA_MODULE_LOADING": "LAZY",
+    "NVIDIA_DRIVER_CAPABILITIES": "compute,utility",
+    "TF_MINICPM_CONFIDENCE": "0.7"
+  },
+  "command": [
+    "<custom native controller>",
+    "benchmark",
+    "kuepker/MiniCPM-V-4.7-35B-A3B-MLX-4bit-TensorFold",
+    "--backend",
+    "cuda",
+    "--drafter",
+    "TensorFold/Qwen3.6-35B-A3B-MLX-4bit-MTP",
+    "--context",
+    "2048",
+    "--output",
+    "new-benchmark.json"
+  ],
+  "protocol": {
+    "id": "community-v1",
+    "sha256": "9bb717da00666b90b4006174abd9ed46108affc37456b43c64a224a9c938d5be"
+  },
+  "settings": {
+    "context_tokens": 2048,
+    "managed": true,
+    "rank_count": 1,
+    "repetitions": 5,
+    "serial": false,
+    "temperatures": [
+      1.0,
+      0.0
+    ],
+    "tokens": 256
+  },
+  "hardware": {
+    "gpu": "RTX PRO 4500 Blackwell 32 GB",
+    "power_limit_w": 200,
+    "ecc": "off",
+    "compute_mode": "Default",
+    "display": "active",
+    "cpu": "Ryzen 9 5900X",
+    "ram": "32 GB DDR4-3200",
+    "pcie": "Gen3 riser on AM4/Gen4 platform"
+  },
+  "memory": {
+    "additional_budget_bytes": 28000000000,
+    "sampled_growth_stop_mib": 24000,
+    "engine_admission_gib": 24,
+    "primary_sampled_peak_additional_gb": 20.95054848
+  },
+  "recommended_receipt": "receipts/minicpm.json",
+  "qualification": "Standard candidate under captured official validator; full paired draft/plain correctness checks supplied; custom source disclosed. No broad model-quality or live receiver approval claimed.",
+  "selection": "MiniCPM: middle greedy-chat run of three complete suites. Qwen: retained balanced confirmation from the earlier campaign.",
+  "runtime": {
+    "backend": "cuda",
+    "dependencies": {
+      "driver": "610.57.04"
+    },
+    "platform": "linux",
+    "python_version": "3.12.3",
+    "tensorfold_version": "0.6.6+mini-managed2"
+  },
+  "measured_group": {
+    "model": "mini",
+    "depth": 6,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 361.5447203192765,
+        "minimum": 360.9644545561677,
+        "maximum": 364.0053433300754,
+        "run_medians": [
+          361.5447203192765,
+          364.0053433300754,
+          360.9644545561677
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 320.60761656073373,
+        "minimum": 320.32191855373554,
+        "maximum": 320.77871970276595,
+        "run_medians": [
+          320.60761656073373,
+          320.32191855373554,
+          320.77871970276595
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 499.0247969355087,
+        "minimum": 497.37446746310815,
+        "maximum": 501.25660214162104,
+        "run_medians": [
+          501.25660214162104,
+          499.0247969355087,
+          497.37446746310815
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 444.50037518097747,
+        "minimum": 443.67390562981205,
+        "maximum": 445.97938617516996,
+        "run_medians": [
+          443.67390562981205,
+          445.97938617516996,
+          444.50037518097747
+        ]
+      }
+    },
+    "representative_run": "20261017T211126Z-mini-d6-c07-refine",
+    "peak_additional_gb": 20.832059392
+  },
+  "conditions": {
+    "additional_vram_limit_bytes": 28000000000,
+    "sampled_growth_stop_mib": 24000
+  },
+  "public_result": "https://tensorfold.dev/benchmarks?result=606a118f-31aa-411d-b7f4-3feb9e81568f"
+}

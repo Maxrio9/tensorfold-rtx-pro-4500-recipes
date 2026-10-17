@@ -1,0 +1,198 @@
+{
+  "all_24_full_token_arrays_match_previous_recipe": true,
+  "comparisons": [
+    {
+      "fixture": "code",
+      "temperature": 0,
+      "seed": 1234,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 70,
+        "drafted": 278,
+        "accepted": 185
+      },
+      "new_depth6_confidence07": {
+        "rounds": 64,
+        "drafted": 261,
+        "accepted": 191
+      }
+    },
+    {
+      "fixture": "code",
+      "temperature": 0,
+      "seed": 1235,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 70,
+        "drafted": 278,
+        "accepted": 185
+      },
+      "new_depth6_confidence07": {
+        "rounds": 64,
+        "drafted": 261,
+        "accepted": 191
+      }
+    },
+    {
+      "fixture": "code",
+      "temperature": 1,
+      "seed": 1234,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 67,
+        "drafted": 249,
+        "accepted": 188
+      },
+      "new_depth6_confidence07": {
+        "rounds": 65,
+        "drafted": 262,
+        "accepted": 190
+      }
+    },
+    {
+      "fixture": "code",
+      "temperature": 1,
+      "seed": 1235,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 72,
+        "drafted": 268,
+        "accepted": 183
+      },
+      "new_depth6_confidence07": {
+        "rounds": 66,
+        "drafted": 240,
+        "accepted": 189
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 0,
+      "seed": 1234,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 100,
+        "drafted": 349,
+        "accepted": 155
+      },
+      "new_depth6_confidence07": {
+        "rounds": 106,
+        "drafted": 248,
+        "accepted": 149
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 0,
+      "seed": 1235,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 100,
+        "drafted": 349,
+        "accepted": 155
+      },
+      "new_depth6_confidence07": {
+        "rounds": 106,
+        "drafted": 248,
+        "accepted": 149
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 1,
+      "seed": 1234,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 101,
+        "drafted": 293,
+        "accepted": 154
+      },
+      "new_depth6_confidence07": {
+        "rounds": 102,
+        "drafted": 245,
+        "accepted": 153
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 1,
+      "seed": 1235,
+      "requested_tokens": 256,
+      "old_depth4_confidence03": {
+        "rounds": 107,
+        "drafted": 306,
+        "accepted": 148
+      },
+      "new_depth6_confidence07": {
+        "rounds": 107,
+        "drafted": 238,
+        "accepted": 148
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 0,
+      "seed": 4500,
+      "requested_tokens": 128,
+      "old_depth4_confidence03": {
+        "rounds": 45,
+        "drafted": 170,
+        "accepted": 82
+      },
+      "new_depth6_confidence07": {
+        "rounds": 48,
+        "drafted": 127,
+        "accepted": 79
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 1,
+      "seed": 4500,
+      "requested_tokens": 128,
+      "old_depth4_confidence03": {
+        "rounds": 51,
+        "drafted": 157,
+        "accepted": 76
+      },
+      "new_depth6_confidence07": {
+        "rounds": 51,
+        "drafted": 124,
+        "accepted": 76
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 0,
+      "seed": 4501,
+      "requested_tokens": 128,
+      "old_depth4_confidence03": {
+        "rounds": 34,
+        "drafted": 129,
+        "accepted": 93
+      },
+      "new_depth6_confidence07": {
+        "rounds": 33,
+        "drafted": 127,
+        "accepted": 94
+      }
+    },
+    {
+      "fixture": "chat",
+      "temperature": 1,
+      "seed": 4501,
+      "requested_tokens": 128,
+      "old_depth4_confidence03": {
+        "rounds": 34,
+        "drafted": 119,
+        "accepted": 93
+      },
+      "new_depth6_confidence07": {
+        "rounds": 35,
+        "drafted": 127,
+        "accepted": 92
+      }
+    }
+  ],
+  "interpretation": "Engine-reported proposal/acceptance counts, including upstream copy behavior; not leaderboard timing. Earlier cold/compiler-overlapped probe timings deliberately excluded."
+}

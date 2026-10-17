@@ -1,0 +1,601 @@
+[
+  {
+    "model": "mini",
+    "depth": 4,
+    "confidence": 0.3,
+    "branch": null,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 340.7137453251068,
+        "minimum": 340.5570327918,
+        "maximum": 340.74865159311065,
+        "run_medians": [
+          340.5570327918,
+          340.7137453251068,
+          340.74865159311065
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 307.4689129305276,
+        "minimum": 306.1426830630957,
+        "maximum": 308.01871647344615,
+        "run_medians": [
+          308.01871647344615,
+          307.4689129305276,
+          306.1426830630957
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 463.10181279188765,
+        "minimum": 462.6616255999408,
+        "maximum": 464.35405744763324,
+        "run_medians": [
+          463.10181279188765,
+          464.35405744763324,
+          462.6616255999408
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 415.534279400162,
+        "minimum": 414.1347906915264,
+        "maximum": 416.15874559766263,
+        "run_medians": [
+          415.534279400162,
+          416.15874559766263,
+          414.1347906915264
+        ]
+      }
+    },
+    "representative_run": "20261017T211323Z-mini-control-b",
+    "peak_additional_gb": 20.855128064
+  },
+  {
+    "model": "mini",
+    "depth": 4,
+    "confidence": 0.5,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 348.86020544166814,
+        "minimum": 348.86020544166814,
+        "maximum": 348.86020544166814,
+        "run_medians": [
+          348.86020544166814
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 316.0806342472519,
+        "minimum": 316.0806342472519,
+        "maximum": 316.0806342472519,
+        "run_medians": [
+          316.0806342472519
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 474.35969844317776,
+        "minimum": 474.35969844317776,
+        "maximum": 474.35969844317776,
+        "run_medians": [
+          474.35969844317776
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 427.62879599521034,
+        "minimum": 427.62879599521034,
+        "maximum": 427.62879599521034,
+        "run_medians": [
+          427.62879599521034
+        ]
+      }
+    },
+    "representative_run": "20261017T210630Z-mini-c05-pilot",
+    "peak_additional_gb": 20.854079488
+  },
+  {
+    "model": "mini",
+    "depth": 4,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 352.01483323693463,
+        "minimum": 352.01483323693463,
+        "maximum": 352.01483323693463,
+        "run_medians": [
+          352.01483323693463
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 320.33913678808267,
+        "minimum": 320.33913678808267,
+        "maximum": 320.33913678808267,
+        "run_medians": [
+          320.33913678808267
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 485.5717116858513,
+        "minimum": 485.5717116858513,
+        "maximum": 485.5717116858513,
+        "run_medians": [
+          485.5717116858513
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 427.8509233021247,
+        "minimum": 427.8509233021247,
+        "maximum": 427.8509233021247,
+        "run_medians": [
+          427.8509233021247
+        ]
+      }
+    },
+    "representative_run": "20261017T210656Z-mini-c07-pilot",
+    "peak_additional_gb": 20.854079488
+  },
+  {
+    "model": "qwen",
+    "depth": null,
+    "confidence": null,
+    "branch": 4,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 139.84472315389306,
+        "minimum": 137.4024559489558,
+        "maximum": 140.01228370043123,
+        "run_medians": [
+          137.4024559489558,
+          140.01228370043123,
+          139.84472315389306
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 131.07406077244613,
+        "minimum": 130.82680341870324,
+        "maximum": 131.49720760497115,
+        "run_medians": [
+          131.49720760497115,
+          131.07406077244613,
+          130.82680341870324
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 195.24391743358916,
+        "minimum": 194.8450726998065,
+        "maximum": 195.81295868782428,
+        "run_medians": [
+          195.81295868782428,
+          195.24391743358916,
+          194.8450726998065
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 229.73113129659563,
+        "minimum": 228.92375025142786,
+        "maximum": 229.95812330912244,
+        "run_medians": [
+          229.95812330912244,
+          229.73113129659563,
+          228.92375025142786
+        ]
+      }
+    },
+    "representative_run": "20261017T211825Z-qwen-b4-confirm-c",
+    "peak_additional_gb": 20.8928768
+  },
+  {
+    "model": "qwen",
+    "depth": null,
+    "confidence": null,
+    "branch": 2,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 127.65597402640064,
+        "minimum": 127.65597402640064,
+        "maximum": 127.65597402640064,
+        "run_medians": [
+          127.65597402640064
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 123.61240776150598,
+        "minimum": 123.61240776150598,
+        "maximum": 123.61240776150598,
+        "run_medians": [
+          123.61240776150598
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 195.04516413043677,
+        "minimum": 195.04516413043677,
+        "maximum": 195.04516413043677,
+        "run_medians": [
+          195.04516413043677
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 227.14793863312497,
+        "minimum": 227.14793863312497,
+        "maximum": 227.14793863312497,
+        "run_medians": [
+          227.14793863312497
+        ]
+      }
+    },
+    "representative_run": "20261017T210810Z-qwen-b2-pilot",
+    "peak_additional_gb": 20.775436288
+  },
+  {
+    "model": "qwen",
+    "depth": null,
+    "confidence": null,
+    "branch": 8,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 141.98099278623474,
+        "minimum": 141.8285240573041,
+        "maximum": 142.0024493662799,
+        "run_medians": [
+          141.8285240573041,
+          141.98099278623474,
+          142.0024493662799
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 132.4377764855094,
+        "minimum": 131.67771673103013,
+        "maximum": 132.65797266960888,
+        "run_medians": [
+          131.67771673103013,
+          132.65797266960888,
+          132.4377764855094
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 195.02326478413437,
+        "minimum": 194.93415454500862,
+        "maximum": 195.04308434041656,
+        "run_medians": [
+          194.93415454500862,
+          195.02326478413437,
+          195.04308434041656
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 227.67233076736198,
+        "minimum": 220.84209614923935,
+        "maximum": 229.43802800854561,
+        "run_medians": [
+          220.84209614923935,
+          229.43802800854561,
+          227.67233076736198
+        ]
+      }
+    },
+    "representative_run": "20261017T211646Z-qwen-b8-confirm-b",
+    "peak_additional_gb": 20.904411136
+  },
+  {
+    "model": "mini",
+    "depth": 4,
+    "confidence": 0.9,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 342.93080831397793,
+        "minimum": 342.93080831397793,
+        "maximum": 342.93080831397793,
+        "run_medians": [
+          342.93080831397793
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 312.422219119291,
+        "minimum": 312.422219119291,
+        "maximum": 312.422219119291,
+        "run_medians": [
+          312.422219119291
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 459.68369565097476,
+        "minimum": 459.68369565097476,
+        "maximum": 459.68369565097476,
+        "run_medians": [
+          459.68369565097476
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 417.92406976202943,
+        "minimum": 417.92406976202943,
+        "maximum": 417.92406976202943,
+        "run_medians": [
+          417.92406976202943
+        ]
+      }
+    },
+    "representative_run": "20261017T210957Z-mini-d4-c09-followup",
+    "peak_additional_gb": 20.931674112
+  },
+  {
+    "model": "mini",
+    "depth": 3,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 340.46260879012027,
+        "minimum": 340.46260879012027,
+        "maximum": 340.46260879012027,
+        "run_medians": [
+          340.46260879012027
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 312.1031069699068,
+        "minimum": 312.1031069699068,
+        "maximum": 312.1031069699068,
+        "run_medians": [
+          312.1031069699068
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 458.3374881027496,
+        "minimum": 458.3374881027496,
+        "maximum": 458.3374881027496,
+        "run_medians": [
+          458.3374881027496
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 394.3770121530803,
+        "minimum": 394.3770121530803,
+        "maximum": 394.3770121530803,
+        "run_medians": [
+          394.3770121530803
+        ]
+      }
+    },
+    "representative_run": "20261017T211023Z-mini-d3-c07-followup",
+    "peak_additional_gb": 20.959985664
+  },
+  {
+    "model": "mini",
+    "depth": 5,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 356.15939530201956,
+        "minimum": 355.8435815214955,
+        "maximum": 356.7678456685986,
+        "run_medians": [
+          355.8435815214955,
+          356.7678456685986,
+          356.15939530201956
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 322.4841508050466,
+        "minimum": 320.61888064211166,
+        "maximum": 323.06792354481286,
+        "run_medians": [
+          322.4841508050466,
+          323.06792354481286,
+          320.61888064211166
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 509.10387535859377,
+        "minimum": 508.5800384297437,
+        "maximum": 509.58401943076245,
+        "run_medians": [
+          508.5800384297437,
+          509.58401943076245,
+          509.10387535859377
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 438.85281629647267,
+        "minimum": 434.68904493600564,
+        "maximum": 439.53357999578634,
+        "run_medians": [
+          439.53357999578634,
+          438.85281629647267,
+          434.68904493600564
+        ]
+      }
+    },
+    "representative_run": "20261017T211505Z-mini-d5-c07-c",
+    "peak_additional_gb": 20.859322368
+  },
+  {
+    "model": "mini",
+    "depth": 6,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 3,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 361.5447203192765,
+        "minimum": 360.9644545561677,
+        "maximum": 364.0053433300754,
+        "run_medians": [
+          361.5447203192765,
+          364.0053433300754,
+          360.9644545561677
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 320.60761656073373,
+        "minimum": 320.32191855373554,
+        "maximum": 320.77871970276595,
+        "run_medians": [
+          320.60761656073373,
+          320.32191855373554,
+          320.77871970276595
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 499.0247969355087,
+        "minimum": 497.37446746310815,
+        "maximum": 501.25660214162104,
+        "run_medians": [
+          501.25660214162104,
+          499.0247969355087,
+          497.37446746310815
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 444.50037518097747,
+        "minimum": 443.67390562981205,
+        "maximum": 445.97938617516996,
+        "run_medians": [
+          443.67390562981205,
+          445.97938617516996,
+          444.50037518097747
+        ]
+      }
+    },
+    "representative_run": "20261017T211126Z-mini-d6-c07-refine",
+    "peak_additional_gb": 20.832059392
+  },
+  {
+    "model": "mini",
+    "depth": 7,
+    "confidence": 0.7,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 359.31737949513865,
+        "minimum": 359.31737949513865,
+        "maximum": 359.31737949513865,
+        "run_medians": [
+          359.31737949513865
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 317.3494353898055,
+        "minimum": 317.3494353898055,
+        "maximum": 317.3494353898055,
+        "run_medians": [
+          317.3494353898055
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 498.5539706023018,
+        "minimum": 498.5539706023018,
+        "maximum": 498.5539706023018,
+        "run_medians": [
+          498.5539706023018
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 431.85090433897875,
+        "minimum": 431.85090433897875,
+        "maximum": 431.85090433897875,
+        "run_medians": [
+          431.85090433897875
+        ]
+      }
+    },
+    "representative_run": "20261017T211151Z-mini-d7-c07-refine",
+    "peak_additional_gb": 20.906508288
+  },
+  {
+    "model": "mini",
+    "depth": 5,
+    "confidence": 0.6,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 359.32796066730197,
+        "minimum": 359.32796066730197,
+        "maximum": 359.32796066730197,
+        "run_medians": [
+          359.32796066730197
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 318.7853720263983,
+        "minimum": 318.7853720263983,
+        "maximum": 318.7853720263983,
+        "run_medians": [
+          318.7853720263983
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 497.645482124222,
+        "minimum": 497.645482124222,
+        "maximum": 497.645482124222,
+        "run_medians": [
+          497.645482124222
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 436.7903630767478,
+        "minimum": 436.7903630767478,
+        "maximum": 436.7903630767478,
+        "run_medians": [
+          436.7903630767478
+        ]
+      }
+    },
+    "representative_run": "20261017T211216Z-mini-d5-c06-refine",
+    "peak_additional_gb": 20.820525056
+  },
+  {
+    "model": "mini",
+    "depth": 5,
+    "confidence": 0.8,
+    "branch": null,
+    "complete_suites": 1,
+    "cells": {
+      "chat-T0": {
+        "median_of_run_medians": 358.57421510087016,
+        "minimum": 358.57421510087016,
+        "maximum": 358.57421510087016,
+        "run_medians": [
+          358.57421510087016
+        ]
+      },
+      "chat-T1": {
+        "median_of_run_medians": 323.3786758257517,
+        "minimum": 323.3786758257517,
+        "maximum": 323.3786758257517,
+        "run_medians": [
+          323.3786758257517
+        ]
+      },
+      "code-T0": {
+        "median_of_run_medians": 494.94091581677674,
+        "minimum": 494.94091581677674,
+        "maximum": 494.94091581677674,
+        "run_medians": [
+          494.94091581677674
+        ]
+      },
+      "code-T1": {
+        "median_of_run_medians": 435.22935734594626,
+        "minimum": 435.22935734594626,
+        "maximum": 435.22935734594626,
+        "run_medians": [
+          435.22935734594626
+        ]
+      }
+    },
+    "representative_run": "20261017T211241Z-mini-d5-c08-refine",
+    "peak_additional_gb": 20.822622208
+  }
+]

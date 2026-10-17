@@ -1,0 +1,95 @@
+diff --git i/src/tensorfold/__init__.py w/src/tensorfold/__init__.py
+index 5230b95..477284e 100644
+--- i/src/tensorfold/__init__.py
++++ w/src/tensorfold/__init__.py
+@@ -1,3 +1,3 @@
+ """TensorFold: fast, exact LLM decoding on Apple Silicon and NVIDIA GPUs behind an OpenAI-compatible endpoint."""
+ 
+-__version__ = "0.6.6"
++__version__ = "0.6.6+mini-managed2"
+diff --git i/src/tensorfold/cli.py w/src/tensorfold/cli.py
+index 58121f1..65158b3 100644
+--- i/src/tensorfold/cli.py
++++ w/src/tensorfold/cli.py
+@@ -312,7 +312,7 @@ def _serve_cuda(args: argparse.Namespace, family: Any, model_dir: Path, context:
+     effective_context = app.effective_context_window
+     own = getattr(weights, "precision", "") == precision.CHECKPOINT
+     prompts = "FP8 activations" if fp8 else "the checkpoint math" if own else "bf16 activations"
+-    print(f"[tensorfold] serving {served} at http://{args.host}:{args.port}/v1 on CUDA{where} "
++    print(f"[tensorfold] {'prepared' if args.port == 0 else 'serving'} {served} at http://{args.host}:{args.port}/v1 on CUDA{where} "
+           f"(sampling: {shown}; drafts: {'off' if args.no_drafts else 'on'}; prompts: {prompts}; "
+           f"context: {'unlimited' if effective_context is None else effective_context}; "
+           f"loaded in {time.perf_counter() - started:.1f}s)", flush=True)
+diff --git i/src/tensorfold/cuda/http.py w/src/tensorfold/cuda/http.py
+index 1a1dc30..54e73ba 100644
+--- i/src/tensorfold/cuda/http.py
++++ w/src/tensorfold/cuda/http.py
+@@ -284,6 +284,8 @@ def serve(app: App, host: str, port: int) -> None:
+ 
+     signal.signal(signal.SIGTERM, _terminate)
+     server = Server((host, port), make_handler(app))
++    if port == 0:
++        print(f"[tensorfold] serving {app.served} at http://{host}:{server.server_address[1]}/v1 on CUDA (managed Python backend)", flush=True)
+     try:
+         from contextlib import nullcontext
+         auth = getattr(app, "auth", None)
+diff --git i/src/tensorfold/families/minicpmv4_7/__init__.py w/src/tensorfold/families/minicpmv4_7/__init__.py
+index 246f029..41bf33f 100644
+--- i/src/tensorfold/families/minicpmv4_7/__init__.py
++++ w/src/tensorfold/families/minicpmv4_7/__init__.py
+@@ -73,7 +73,7 @@ def mtp_file(model_dir: str | Path, *, cached=None) -> tuple[Path | None, str]:
+ 
+ 
+ def cuda_engine(model_dir: str | Path, *, drafter: str = "", tp: int = 1, no_drafts: bool = False,
+-                mtp_drafts: int | None = None, context: int | None = None, vision: bool = False,
++                mtp_drafts: int | None = None, mtp_confidence: float | None = None, context: int | None = None, vision: bool = False,
+                 vision_urls: bool = False, vision_offload: bool = False, **options: Any):
+     """One GPU: the Qwen3.6 MoE engine on ``text_config``, Qwen3.6's MTP layer drafting; ``vision`` adds the tower."""
+ 
+@@ -81,7 +81,7 @@ def cuda_engine(model_dir: str | Path, *, drafter: str = "", tp: int = 1, no_dra
+         raise ValueError(f"{TITLE} drafts with Qwen3.6's MTP layer on CUDA: a separate draft model does not apply")
+     if int(tp) != 1:
+         raise ValueError(f"{TITLE} runs on one GPU: drop --tp")
+-    from tensorfold.families.qwen3_5_moe.cuda import DEPTH
++    from tensorfold.families.qwen3_5_moe.cuda import DEPTH, CONFIDENCE
+     from tensorfold.families.qwen3_5_moe.cuda.engine import Qwen36Engine
+ 
+     depth = 0 if no_drafts else DEPTH if mtp_drafts is None else int(mtp_drafts)
+@@ -102,5 +102,5 @@ def cuda_engine(model_dir: str | Path, *, drafter: str = "", tp: int = 1, no_dra
+ 
+     # without --vision the lane only leaves the tower's tensors out of the memory estimate
+     lane = Lane(Path(model_dir), enabled=vision, allow_urls=vision_urls, offload=vision_offload)
+-    return Qwen36Engine(Path(model_dir), depth=depth, context=context, context_explicit=options.get("context_explicit"),
++    return Qwen36Engine(Path(model_dir), depth=depth, confidence=CONFIDENCE if mtp_confidence is None else float(mtp_confidence), context=context, context_explicit=options.get("context_explicit"),
+                         streams=streams, mtp_path=path, skip=text_skip, vision=lane)
+diff --git i/src/tensorfold/families/qwen3_5_moe/cuda/engine.py w/src/tensorfold/families/qwen3_5_moe/cuda/engine.py
+index a5fbdfa..909f2f0 100644
+--- i/src/tensorfold/families/qwen3_5_moe/cuda/engine.py
++++ w/src/tensorfold/families/qwen3_5_moe/cuda/engine.py
+@@ -99,6 +99,8 @@ class Qwen36Engine:
+         torch.cuda.empty_cache()
+         self.eos = tuple(self.w.config.eos)
+         self.points = resume_points(model_dir)
++        import os
++        self.reuse_prefix = os.environ.get("TF_BENCHMARK_NO_PREFIX_REUSE") != "1"
+         self.cache = PrefixCache(KEEP)       # (ids, target state, (head cache, held row)) at message starts and ends
+         # ``streams`` > 1: up to that many requests decoded together, every stream's window verified in one forward
+         self.concurrent = many
+@@ -173,12 +175,13 @@ class Qwen36Engine:
+             stats.update(decode_s=round(res.seconds, 4), rounds=res.rounds, min_rows=min(res.widths, default=0))
+             return stats
+         # an image prompt neither resumes nor keeps prompt states: its placeholder ids do not name its images
+-        hit = self._resume(prompt) if encoded is None else None
+-        stops = [p for p in (self.points(prompt) if self.points is not None and encoded is None else [])
++        reusable = encoded is None and self.reuse_prefix
++        hit = self._resume(prompt) if reusable else None
++        stops = [p for p in (self.points(prompt) if self.points is not None and reusable else [])
+                  if p >= (len(hit[0]) if hit else 0) + MIN_GAP]
+         keep = (lambda p, st, mc, held: self.cache.add(list(prompt[:p]), st, (mc, held))       # noqa: E731
+-                ) if encoded is None else None
+-        end = None if encoded is not None or (stops and len(prompt) - stops[-1] < MIN_GAP) else entry_end(prompt)
++                ) if reusable else None
++        end = None if not reusable or (stops and len(prompt) - stops[-1] < MIN_GAP) else entry_end(prompt)
+         st, mc, first, carry = prefill(self.w, self.head, prompt, sampling,
+                                        state=hit[1] if hit else None, cache=hit[2][0] if hit else None,
+                                        held=hit[2][1] if hit else None, stops=stops, keep=keep, keep_at=end, **grammar)

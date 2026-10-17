@@ -1,0 +1,124 @@
+diff --git i/build.zig.zon w/build.zig.zon
+index dbcb0ed..47b747f 100644
+--- i/build.zig.zon
++++ w/build.zig.zon
+@@ -1,6 +1,6 @@
+ .{
+     .name = .tensorfold,
+-    .version = "1.0.12",
++    .version = "1.0.12+frontier-b4",
+     .fingerprint = 0xb6dc5a482d53980a, // Changing this has security and trust implications.
+     .minimum_zig_version = "0.17.0",
+     .dependencies = .{},
+diff --git i/zig/src/families/qwen27/cuda/draft_policy.zig w/zig/src/families/qwen27/cuda/draft_policy.zig
+index 83888d4..68874eb 100644
+--- i/zig/src/families/qwen27/cuda/draft_policy.zig
++++ w/zig/src/families/qwen27/cuda/draft_policy.zig
+@@ -117,6 +117,6 @@ test "best_first pops by path score, parents before children, ties by parent" {
+     }
+     try bestFirst(gpa, .{ .ids = &ids, .unary = &unary, .projected = &projected, .depths = 2 }, pred, succ, 3, 5, null, 100, &tree);
+     // logp_i = -i / 1.5 - ln(sum): the anchor's 0 and 1 (score 0.72, 1.39) come before 0's child 0 (1.44)
+-    try std.testing.expectEqualSlices(u32, &.{ 0, 1, 0, 2, 1 }, tree.tokens.items);
+-    try std.testing.expectEqualSlices(i32, &.{ -1, -1, 0, -1, 0 }, tree.parents.items);
++    try std.testing.expectEqualSlices(u32, if (branch == 2) &.{ 0, 1, 0, 1, 0 } else &.{ 0, 1, 0, 2, 1 }, tree.tokens.items);
++    try std.testing.expectEqualSlices(i32, if (branch == 2) &.{ -1, -1, 0, 0, 1 } else &.{ -1, -1, 0, -1, 0 }, tree.parents.items);
+ }
+diff --git i/zig/src/server/benchmark.zig w/zig/src/server/benchmark.zig
+index d8e69f3..de33833 100644
+--- i/zig/src/server/benchmark.zig
++++ w/zig/src/server/benchmark.zig
+@@ -11,6 +11,7 @@ const stream = @import("benchmark_stream.zig");
+ const server = @import("benchmark_server.zig");
+ const model = @import("benchmark_model.zig");
+ const host = @import("benchmark_host.zig");
++const minicpm = @import("benchmark_minicpm.zig");
+ const upload = @import("benchmark_upload.zig");
+ const check = @import("benchmark_check.zig");
+ const stop = @import("benchmark_stop.zig");
+@@ -308,9 +309,14 @@ fn run(ctx: *const Context, args: Args) !u8 {
+         const config = model.readConfig(a, ctx.io, dir) orelse return fail(ctx, "Checkpoint is incomplete; run tensorfold pull MODEL");
+         if (config.value != .object) return fail(ctx, "Checkpoint is incomplete; run tensorfold pull MODEL");
+         const kind = model.modelType(config.value) orelse "unknown";
++        const mini = if (std.mem.eql(u8, kind, "minicpmv4_7") and std.mem.eql(u8, backend, "cuda"))
++            minicpm.detect(a, ctx.io, ctx.environ) catch return fail(ctx, "Managed MiniCPM adapter facts are invalid or unavailable")
++        else null;
+         for (ctx.engines.families) |f| {
+             if (std.mem.eql(u8, f.model_type, kind)) break;
+-        } else return fail(ctx, try std.fmt.allocPrint(a, "This build does not serve model_type {s}; tensorfold-native capabilities --json lists what it serves", .{kind}));
++        } else {
++            if (mini == null) return fail(ctx, try std.fmt.allocPrint(a, "This build does not serve model_type {s}; tensorfold-native capabilities --json lists what it serves", .{kind}));
++        }
+         const auto = std.mem.eql(u8, args.drafter, "auto");
+         const given = !auto and !std.mem.eql(u8, args.drafter, "none") and args.drafter.len > 0;
+         // auto passes the family's own drafter only when serve's cache lookup finds it; nothing is downloaded.
+@@ -330,14 +336,15 @@ fn run(ctx: *const Context, args: Args) !u8 {
+         facts = .{
+             .model = try model.describe(a, ctx.io, args.target, dir, hub.isDir(ctx.io, try expand(ctx, args.target)), ctx.engines.families, drafter_label),
+             .hardware = probe.hardware,
+-            .runtime = .{ .tensorfold_version = ctx.engines.version, .backend = backend, .python_version = "none", .platform = if (builtin.os.tag == .macos) "macos" else "linux", .driver = probe.driver },
++            .runtime = .{ .tensorfold_version = if (mini) |m| m.version else ctx.engines.version, .backend = backend, .python_version = if (mini) |m| m.python else "none", .platform = if (builtin.os.tag == .macos) "macos" else "linux", .driver = probe.driver },
+         };
++        if (mini != null) facts.model.family = kind;
+         if (args.startup_timeout == null) {
+             const bytes = model.weightBytes(ctx.io, dir);
+             startup_s = server.startupTimeout(bytes);
+             if (startup_s > 600) wait = try std.fmt.allocPrint(a, "The server gets up to {d} s to load {d:.0} GB of weights; --startup-timeout sets another limit.", .{ startup_s, @as(f64, @floatFromInt(bytes)) / 1e9 });
+         }
+-        plan = .{ .exe = ctx.self_exe orelse try std.process.executablePathAlloc(ctx.io, a), .dir = dir, .backend = backend, .tokens = @intCast(args.tokens), .context = args.context, .drafter_dir = drafter_dir, .serial = args.serial };
++        plan = .{ .exe = if (mini) |m| m.exe else ctx.self_exe orelse try std.process.executablePathAlloc(ctx.io, a), .dir = dir, .backend = backend, .tokens = @intCast(args.tokens), .context = args.context, .drafter_dir = drafter_dir, .serial = args.serial };
+         var u: cli.Usage = .{};
+         _ = cli.parse(a, (try server.argv(a, plan.?))[2..], &u) catch |e| switch (e) {
+             error.Usage => return fail(ctx, try std.fmt.allocPrint(a, "the managed server refuses its flags: {s}", .{u.message})),
+diff --git i/zig/src/server/benchmark_minicpm.zig w/zig/src/server/benchmark_minicpm.zig
+new file mode 100644
+index 0000000..f7ee32d
+--- /dev/null
++++ w/zig/src/server/benchmark_minicpm.zig
+@@ -0,0 +1,26 @@
++//! Explicit source-build bridge to a supervised local MiniCPM Python server.
++//! The native benchmark retains its standard suite and HTTP timing implementation.
++const std = @import("std");
++const json = @import("json");
++const Allocator = std.mem.Allocator;
++pub const Info = struct { exe: []const u8, version: []const u8, python: []const u8 };
++
++pub fn detect(a: Allocator, io: std.Io, env: *const std.process.Environ.Map) !?Info {
++    const exe = env.get("TF_MINICPM_MANAGED_ADAPTER") orelse return null;
++    if (!std.fs.path.isAbsolute(exe)) return error.InvalidAdapter;
++    const r = try std.process.run(a, io, .{
++        .argv = &.{exe, "--facts"},
++        .environ_map = env,
++        .stdout_limit = .limited(64 << 10),
++        .stderr_limit = .limited(64 << 10),
++        .timeout = .{ .duration = .{ .raw = .fromSeconds(30), .clock = .awake } },
++    });
++    if (!r.term.success()) return error.InvalidAdapter;
++    const parsed = try json.parse(a, r.stdout);
++    const v = switch (parsed) { .ok => |v| v, .err => return error.InvalidAdapter };
++    const version = (v.get("tensorfold_version") orelse return error.InvalidAdapter).str() orelse return error.InvalidAdapter;
++    const python = (v.get("python_version") orelse return error.InvalidAdapter).str() orelse return error.InvalidAdapter;
++    const kind = (v.get("model_type") orelse return error.InvalidAdapter).str() orelse return error.InvalidAdapter;
++    if (!std.mem.eql(u8, kind, "minicpmv4_7") or !std.mem.eql(u8, version, "0.6.6+mini-managed2") or std.mem.eql(u8, python, "none")) return error.InvalidAdapter;
++    return .{ .exe = exe, .version = version, .python = python };
++}
+diff --git i/zig/src/server/benchmark_server.zig w/zig/src/server/benchmark_server.zig
+index 6462429..a3958e5 100644
+--- i/zig/src/server/benchmark_server.zig
++++ w/zig/src/server/benchmark_server.zig
+@@ -126,14 +126,14 @@ pub const Managed = struct {
+             return null;
+         };
+         const child = std.process.spawn(io, .{ .argv = child_argv, .environ_map = &child_env, .stdin = .ignore, .stdout = .{ .file = log }, .stderr = .{ .file = log } }) catch {
+-            cwd.deleteFile(io, log_path) catch {};
++            if (env.get("TF_MINICPM_KEEP_LOGS") == null) cwd.deleteFile(io, log_path) catch {};
+             log.close(io);
+             lock.close(io);
+             problem.* = "Could not start the benchmark server; check the TensorFold installation";
+             return null;
+         };
+         stop_flag.guardChild(child.id.?);
+-        cwd.deleteFile(io, log_path) catch {};
++        if (env.get("TF_MINICPM_KEEP_LOGS") == null) cwd.deleteFile(io, log_path) catch {};
+         var m: Managed = .{ .io = io, .pid = child.id.?, .log = log, .lock = lock, .grace_ms = o.grace_ms };
+         const ok = m.ready(a, o.startup_timeout_s, o.tail, problem) catch |e| {
+             _ = m.stop();
