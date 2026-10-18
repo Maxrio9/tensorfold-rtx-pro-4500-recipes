@@ -1,0 +1,22 @@
+[
+  {
+    "file": "receipts/baseline-community-v1.json",
+    "sha256": "d5936095d378a46ce1fed104dc3f02b3e80f263408c6526c2ab9d7127ab617b3",
+    "unmodified_native_receipt": true,
+    "measured_binary_sha256": "b09a48a2d4a3b1dc3409653ae3234deb4605c2bf9327fda2f841a324e4596c63",
+    "engine_base_commit": "bfcc84ab22669fd92586572d5e57ad10a5eea716",
+    "patch": null,
+    "publication": "Public supporting receipt; not a new leaderboard submission",
+    "note": "Native runtime version reports 1.0.12. The tuned binary is modified; patch and binary hash identify it."
+  },
+  {
+    "file": "receipts/tuned-community-v1.json",
+    "sha256": "17a2908e84a40ecfd26b951676469fa8726719e970893ba8a69a5da05efa25b6",
+    "unmodified_native_receipt": true,
+    "measured_binary_sha256": "5ceb4b081f95a243c55fdf4870da677f8716253252c6ef463641f6f6e201a5da",
+    "engine_base_commit": "bfcc84ab22669fd92586572d5e57ad10a5eea716",
+    "patch": "source/tunable-v13.patch",
+    "publication": "Public supporting receipt; not a new leaderboard submission",
+    "note": "Native runtime version reports 1.0.12. The tuned binary is modified; patch and binary hash identify it."
+  }
+]

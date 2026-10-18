@@ -1,0 +1,506 @@
+diff --git i/zig/kernels/cuda/gdn.cu w/zig/kernels/cuda/gdn.cu
+index 574fb92..744312f 100644
+--- i/zig/kernels/cuda/gdn.cu
++++ w/zig/kernels/cuda/gdn.cu
+@@ -321,3 +321,9 @@ TF_TREE(4, 2, 4, false)
+ TF_TREE(8, 2, 4, false)
+ TF_TREE(16, 2, 2, false)
+ TF_TREE(32, 2, 1, false)
++
++template __global__ void tf_gdn::replay_kernel<__nv_bfloat16, 4, 4>(const long long*, int, const int*, int, const int*, int, float*, int, int, int);
++
++template __global__ void tf_gdn::replay_kernel<__nv_bfloat16, 4, 8>(const long long*, int, const int*, int, const int*, int, float*, int, int, int);
++
++template __global__ void tf_gdn::replay_kernel<__nv_bfloat16, 2, 8>(const long long*, int, const int*, int, const int*, int, float*, int, int, int);
+diff --git i/zig/kernels/cuda/lane_gemv.cu w/zig/kernels/cuda/lane_gemv.cu
+index 94a78a5..365145e 100644
+--- i/zig/kernels/cuda/lane_gemv.cu
++++ w/zig/kernels/cuda/lane_gemv.cu
+@@ -274,3 +274,7 @@ extern "C" __global__ void __launch_bounds__(128) tf_lane_gemv_split(const __nv_
+                                                                      float* __restrict__ work, unsigned* __restrict__ tickets) {
+     tf_lane_gemv::gemv_split<64, 64, 4>(x, xs, P, M, K, ldx, work, tickets);
+ }
++
++template __global__ void tf_lane_gemv::gemv_kernel<64, 64, 4>(const __nv_bfloat16*, const float*, const __grid_constant__ tf_lane_gemv::Part, int, int, int);
++
++template __global__ void tf_lane_gemv::gemv_kernel<64, 32, 4>(const __nv_bfloat16*, const float*, const __grid_constant__ tf_lane_gemv::Part, int, int, int);
+diff --git i/zig/kernels/cuda/qmm_group.cu w/zig/kernels/cuda/qmm_group.cu
+index 9c97ddf..a13f6e6 100644
+--- i/zig/kernels/cuda/qmm_group.cu
++++ w/zig/kernels/cuda/qmm_group.cu
+@@ -346,3 +346,27 @@ template __global__ void tf_qmm_group::group_kernel<64, 64, 64, 1, 4, 4, false,
+     const __nv_bfloat16*, const float*, const __grid_constant__ tf_qmm_group::Parts, int, int, int, int, int);
+ template __global__ void tf_qmm_group::group_kernel<64, 64, 128, 2, 4, 3, false, false, false, false>(
+     const __nv_bfloat16*, const float*, const __grid_constant__ tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 16, 64, 1, 4, 4, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 16, 64, 1, 4, 6, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 128, 64, 2, 4, 3, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 128, 128, 2, 4, 2, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 16, 64, 1, 4, 2, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 16, 64, 1, 4, 3, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 64, 64, 1, 4, 2, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 64, 64, 1, 4, 3, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 64, 128, 2, 4, 2, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 16, 64, 1, 2, 4, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 16, 128, 1, 4, 4, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
++
++template __global__ void tf_qmm_group::group_kernel<64, 64, 128, 1, 8, 3, false, false, false, false>(const __nv_bfloat16*, const float*, __grid_constant__ const tf_qmm_group::Parts, int, int, int, int, int);
+diff --git i/zig/src/families/qwen27/cuda/draft.zig w/zig/src/families/qwen27/cuda/draft.zig
+index 587554e..57a3eee 100644
+--- i/zig/src/families/qwen27/cuda/draft.zig
++++ w/zig/src/families/qwen27/cuda/draft.zig
+@@ -318,8 +318,13 @@ pub const DFlash2 = struct {
+     }
+ 
+     /// launch_blocks: each stream's pending token then masks through the layers in one forward; candidates on the host.
+-    pub fn launchMany(x: *DFlash2, blocks: []const Block, L: usize) !void {
++    pub fn launchMany(x: *DFlash2, blocks: []const Block, requested: usize) !void {
++        const configured = if (std.c.getenv("TF_QWEN27_DRAFT_BLOCK")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch block else block;
+         const S = blocks.len;
++        const batch_block = if (std.c.getenv("TF_QWEN27_DRAFT_BATCH_BLOCK")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 0 else 0;
++        const batch_threshold = if (std.c.getenv("TF_QWEN27_DRAFT_BATCH_THRESHOLD")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 8 else 8;
++        const selected = if (batch_block != 0 and S >= batch_threshold) batch_block else configured;
++        const L = @min(requested, selected);
+         const rows = S * L;
+         if (S == 0 or S > st.max_streams or L < 2 or L > block) return error.NoDraftContext;
+         for (blocks) |b| if (b.ctx.len == 0) return error.NoDraftContext;
+diff --git i/zig/src/families/qwen27/cuda/draft_policy.zig w/zig/src/families/qwen27/cuda/draft_policy.zig
+index 83888d4..b5b7b8a 100644
+--- i/zig/src/families/qwen27/cuda/draft_policy.zig
++++ w/zig/src/families/qwen27/cuda/draft_policy.zig
+@@ -34,7 +34,17 @@ pub fn bestFirst(gpa: std.mem.Allocator, c: Candidates, pred: []const f32, succ:
+     const temp: f64 = if (sampling) |s| @max(s.temperature, 1e-6) else 1.0;
+     var heap: std.PriorityQueue(Item, void, before) = .empty;
+     defer heap.deinit(gpa);
++    const proposal_scale = if (std.c.getenv("TF_QWEN27_DFLASH_SCALE")) |v| std.fmt.parseFloat(f64, std.mem.span(v)) catch scale else scale;
++    const proposal_noise = if (std.c.getenv("TF_QWEN27_DFLASH_NOISE")) |v| std.fmt.parseFloat(f64, std.mem.span(v)) catch noise_weight else noise_weight;
++    const proposal_edge = if (std.c.getenv("TF_QWEN27_DFLASH_EDGE")) |v| std.fmt.parseFloat(f64, std.mem.span(v)) catch edge_weight else edge_weight;
++    if (!std.math.isFinite(proposal_scale) or proposal_scale <= 0 or !std.math.isFinite(proposal_noise) or proposal_noise < 0 or !std.math.isFinite(proposal_edge)) return error.InvalidDraftScore;
++    const branches = if (std.c.getenv("TF_QWEN27_DFLASH_BRANCHES")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch branch else branch;
++    if (branches == 0 or branches > top) return error.InvalidDraftBranches;
+     const Ctx = struct {
++        branches: usize,
++        proposal_scale: f64,
++        proposal_noise: f64,
++        proposal_edge: f64,
+         gpa: std.mem.Allocator,
+         c: Candidates,
+         pred: []const f32,
+@@ -55,9 +65,9 @@ pub fn bestFirst(gpa: std.mem.Allocator, c: Candidates, pred: []const f32, succ:
+                 const s = x.succ[@as(usize, cand) * rank ..][0..rank];
+                 var edge: f64 = 0;
+                 for (s, weighted) |a, b| edge += @as(f64, a) * b;
+-                v.* = (x.c.unary[depth * top + i] + edge_weight * edge) / x.temp;
+-                if (x.sampling) |smp| v.* += noise_weight * -@log(-@log(lanes.sampling.uniform(smp.seed, x.first_position + depth, cand)));
+-                v.* /= scale;
++                v.* = (x.c.unary[depth * top + i] + x.proposal_edge * edge) / x.temp;
++                if (x.sampling) |smp| v.* += x.proposal_noise * -@log(-@log(lanes.sampling.uniform(smp.seed, x.first_position + depth, cand)));
++                v.* /= x.proposal_scale;
+             }
+             var most = values[0];
+             for (values[1..]) |v| most = @max(most, v);
+@@ -74,14 +84,14 @@ pub fn bestFirst(gpa: std.mem.Allocator, c: Candidates, pred: []const f32, succ:
+                     return vals[a] > vals[b] or (vals[a] == vals[b] and a < b);
+                 }
+             }.more);
+-            for (order[0..branch]) |i| {
++            for (order[0..x.branches]) |i| {
+                 const logp = values[i] - log_total;
+                 if (!std.math.isFinite(logp)) break;
+                 try x.heap.push(x.gpa, .{ .score = path - logp, .parent = parent, .token = x.c.ids[depth * top + i], .depth = depth });
+             }
+         }
+     };
+-    const ctx: Ctx = .{ .gpa = gpa, .c = c, .pred = pred, .succ = succ, .temp = temp, .sampling = sampling, .first_position = first_position, .heap = &heap };
++    const ctx: Ctx = .{ .branches = branches, .proposal_scale = proposal_scale, .proposal_noise = proposal_noise, .proposal_edge = proposal_edge, .gpa = gpa, .c = c, .pred = pred, .succ = succ, .temp = temp, .sampling = sampling, .first_position = first_position, .heap = &heap };
+     try ctx.expand(anchor, 0, -1, 0.0);
+     while (heap.count() > 0 and out.tokens.items.len < max_nodes) {
+         const it = heap.pop().?;
+diff --git i/zig/src/families/qwen27/cuda/engine.zig w/zig/src/families/qwen27/cuda/engine.zig
+index 91b8103..780ad91 100644
+--- i/zig/src/families/qwen27/cuda/engine.zig
++++ w/zig/src/families/qwen27/cuda/engine.zig
+@@ -12,7 +12,7 @@ const Forward = @import("forward.zig").Forward;
+ const Part = @import("forward.zig").Part;
+ 
+ /// prefill.CHUNK: a prompt chunk's rows (prompt_rows on a GPU of 80 GB or more).
+-pub const prompt_rows = 4096;
++pub const prompt_rows = 1024;
+ 
+ /// prefill.chunks: even chunks of at most `size` rows of [start, end); any bounds give the same bits.
+ pub fn chunkBounds(start: usize, end: usize, size: usize, j: usize) [2]usize {
+diff --git i/zig/src/families/qwen27/cuda/forward.zig w/zig/src/families/qwen27/cuda/forward.zig
+index e188647..37c7542 100644
+--- i/zig/src/families/qwen27/cuda/forward.zig
++++ w/zig/src/families/qwen27/cuda/forward.zig
+@@ -104,8 +104,7 @@ pub const Forward = struct {
+                     const rec = s.records[i];
+                     try f.ops.dense(s.y, s.xs, d.qkv, rec.qkv, W);
+                     try f.ops.dense(s.y, s.xs, d.z, s.z, W);
+-                    try f.ops.dense(s.y, s.xs, d.b, s.b, W);
+-                    try f.ops.dense(s.y, s.xs, d.a, s.a, W);
++                    try f.ops.denseAux(s.y, s.xs, d.b, d.a, s.b, s.a, W);
+                     const sid: ?u64 = if (r.multi) r.sids else null;
+                     try f.t.gdnPre(rec.qkv, r.conv(parts, s, g_, i, lin), d.conv, r.windows, sid, s.a, s.b, d.a_log, d.dt_bias, rec.q, rec.k, rec.v, rec.g, rec.beta, W, f.gdnShape());
+                     const state = if (r.multi) 0 else parts[0].seq.rec[i];
+@@ -118,8 +117,7 @@ pub const Forward = struct {
+                 .attention => |a| {
+                     const rec = s.attn_records[i];
+                     try f.ops.dense(s.y, s.xs, a.q, s.qg, W);
+-                    try f.ops.dense(s.y, s.xs, a.k, s.key, W);
+-                    try f.ops.dense(s.y, s.xs, a.v, rec.v, W);
++                    try f.ops.denseKV(s.y, s.xs, a.k, a.v, s.key, rec.v, W);
+                     try f.t.attnPrep(s.qg, s.key, a.q_norm, a.k_norm, r.pos, w.inv_freq, s.q_rot, rec.k, W, f.attnShape(), c.eps);
+                     const part: tri.Tri.Partials = .{ .o = s.part_o, .m = s.part_m, .l = s.part_l };
+                     if (r.kv8) try f.t.attention8(s.q_rot, rec.k, rec.v, s.origin, r.offsets(i, att), r.attn, part, s.attn, f.attnShape()) else try f.t.attention(s.q_rot, rec.k, rec.v, s.origin, r.offsets(i, att), r.attn, part, s.attn, f.attnShape());
+@@ -129,8 +127,7 @@ pub const Forward = struct {
+                 },
+             }
+             x = try f.norm(x, s.r, layer.post_norm, W);
+-            try f.ops.dense(s.y, s.xs, layer.gate, s.gate, W);
+-            try f.ops.dense(s.y, s.xs, layer.up, s.up, W);
++            try f.ops.densePair(s.y, s.xs, layer.gate, layer.up, s.gate, s.up, W);
+             try f.t.swiglu(s.gate, s.up, s.act, s.act_xs, W, g_.intermediate);
+             try f.ops.dense(s.act, s.act_xs, layer.down, s.pending, W);
+             pending = s.pending;
+diff --git i/zig/src/families/qwen27/cuda/kernels.zig w/zig/src/families/qwen27/cuda/kernels.zig
+index c43f19a..ffe4f77 100644
+--- i/zig/src/families/qwen27/cuda/kernels.zig
++++ w/zig/src/families/qwen27/cuda/kernels.zig
+@@ -11,6 +11,12 @@ const sym = struct {
+         "_ZN12tf_qmm_group12group_kernelILi64ELi32ELi64ELi1ELi4ELi4ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
+         "_ZN12tf_qmm_group12group_kernelILi64ELi64ELi64ELi1ELi4ELi4ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
+         "_ZN12tf_qmm_group12group_kernelILi64ELi64ELi128ELi2ELi4ELi3ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++        "_ZN12tf_qmm_group12group_kernelILi64ELi128ELi64ELi2ELi4ELi3ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++        "_ZN12tf_qmm_group12group_kernelILi64ELi128ELi128ELi2ELi4ELi2ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++        "_ZN12tf_qmm_group12group_kernelILi64ELi64ELi64ELi1ELi4ELi2ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++        "_ZN12tf_qmm_group12group_kernelILi64ELi64ELi64ELi1ELi4ELi3ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++        "_ZN12tf_qmm_group12group_kernelILi64ELi64ELi128ELi2ELi4ELi2ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++        "_ZN12tf_qmm_group12group_kernelILi64ELi64ELi128ELi1ELi8ELi3ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
+     };
+     const gemv = "_ZN12tf_lane_gemv11gemv_kernelILi64ELi64ELi8EEEvPK13__nv_bfloat16PKfNS_4PartEiii";
+     const prefill_mm = "_ZN14tf_qmm_prefill14prefill_kernelILi64ELi128ELi128ELi2ELi2ELi2ELb0EEEvPK13__nv_bfloat16PKjS3_S3_Pviiiiii";
+@@ -38,7 +44,7 @@ comptime {
+ pub const group_smem: u32 = 35328; // LaneTile<64, 16, 64, 1, 4, 8>::SMEM
+ /// qmm_group's GB10 tiles 3-5 for wider rounds: rows a tile, columns a tile, threads, LaneTile::SMEM.
+ pub const Wide = struct { bm: usize, bn: usize, threads: u32, smem: u32 };
+-pub const wide = [_]Wide{ .{ .bm = 32, .bn = 64, .threads = 128, .smem = 26112 }, .{ .bm = 64, .bn = 64, .threads = 128, .smem = 43008 }, .{ .bm = 64, .bn = 128, .threads = 256, .smem = 39168 } };
++pub const wide = [_]Wide{ .{ .bm = 32, .bn = 64, .threads = 128, .smem = 26112 }, .{ .bm = 64, .bn = 64, .threads = 128, .smem = 43008 }, .{ .bm = 64, .bn = 128, .threads = 256, .smem = 39168 }, .{ .bm = 128, .bn = 64, .threads = 256, .smem = 57600 }, .{ .bm = 128, .bn = 128, .threads = 256, .smem = 65536 }, .{ .bm = 64, .bn = 64, .threads = 128, .smem = 21504 }, .{ .bm = 64, .bn = 64, .threads = 128, .smem = 32256 }, .{ .bm = 64, .bn = 128, .threads = 256, .smem = 32768 }, .{ .bm = 64, .bn = 128, .threads = 256, .smem = 39168 } };
+ pub const prefill_mm_smem: u32 = 41984; // Tile<64, 128, 128, 2, 2, 2>::SMEM: prompt_tile 9, two stages
+ pub const pattn_smem: u32 = 98304; // two 32-key slots of 256 dims beside eight warps' staged queries
+ 
+@@ -56,8 +62,15 @@ pub const Kernels = struct {
+     mods: [15]cuda.Module,
+     triton: cuda.aot.Set,
+     group: cuda.Function,
++    group_shared: u32,
++    group_columns: usize,
++    group_threads: u32,
+     wide: [wide.len]cuda.Function, // tiles 3-5: rows <= 32, <= 64, more
+     gemv: cuda.Function,
++    gemv_columns: usize,
++    gemv_shared: u32,
++    gemv_min_columns: usize,
++    gemv_match_columns: usize,
+     prefill_mm: cuda.Function,
+     pattn: cuda.Function,
+     pattn8: cuda.Function,
+@@ -65,6 +78,8 @@ pub const Kernels = struct {
+     trees: [cuda.kernels.gdn_variants.len]cuda.Function, // tree_kernel by gdn_variants: [0] the chain one
+     chip: [3]c_int, // major, minor, SMs: what dispatch_tree reads
+     replay: cuda.Function,
++    replay_r: usize,
++    replay_warps: usize,
+     prompt_chain: cuda.Function,
+     prompt_rows: usize, // the prompt chain's value rows a block: 64 when heads < SMs
+     pack_dense: cuda.Function,
+@@ -79,6 +94,10 @@ pub const Kernels = struct {
+     rotary: cuda.Function,
+     gemv_blocks: usize, // resident lane_gemv CTAs: per SM times SMs
+     gemv_rows: usize, // windows of at most this many rows take lane_gemv (none; TF_QWEN27_GEMV_ROWS)
++    fuse_pairs: bool,
++    fuse_aux: bool,
++    fuse_kv: bool,
++    wide_policy: usize,
+     gb10: bool,
+     discrete: bool, // the card has its own memory: checkpoint bytes reach it through page-locked slots
+ 
+@@ -96,14 +115,41 @@ pub const Kernels = struct {
+             k.mods[i] = try cuda.Module.load(d, img);
+             loaded += 1;
+         }
+-        k.group = try k.mods[0].function(sym.group);
++        const stages: usize = if (std.c.getenv("TF_QWEN27_GROUP_STAGES")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 8 else 8;
++        const tile: usize = if (std.c.getenv("TF_QWEN27_SMALL_TILE")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 0 else 0;
++        const group_sym: [:0]const u8 = if (tile == 1) "_ZN12tf_qmm_group12group_kernelILi64ELi16ELi64ELi1ELi2ELi4ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii" else if (tile == 2) "_ZN12tf_qmm_group12group_kernelILi64ELi16ELi128ELi1ELi4ELi4ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii" else switch(stages) {
++            4 => "_ZN12tf_qmm_group12group_kernelILi64ELi16ELi64ELi1ELi4ELi4ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++            2 => "_ZN12tf_qmm_group12group_kernelILi64ELi16ELi64ELi1ELi4ELi2ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++            3 => "_ZN12tf_qmm_group12group_kernelILi64ELi16ELi64ELi1ELi4ELi3ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++            6 => "_ZN12tf_qmm_group12group_kernelILi64ELi16ELi64ELi1ELi4ELi6ELb0ELb0ELb0ELb0EEEvPK13__nv_bfloat16PKfNS_5PartsEiiiii",
++            else => sym.group,
++        };
++        k.group_shared = switch(stages) { 2 => 8832, 3 => 13248, 4 => 17664, 6 => 26496, else => group_smem };
++        k.group_columns = if (tile == 2) 128 else 64;
++        k.group_threads = if (tile == 1) 64 else 128;
++        if (tile == 1) k.group_shared = 17664;
++        if (tile == 2) k.group_shared = 26880;
++        k.group = try k.mods[0].function(group_sym);
+         for (&k.wide, sym.wide) |*f, name| f.* = try k.mods[0].function(name);
+         k.prefill_mm = try k.mods[1].function(sym.prefill_mm);
+-        k.gemv = try k.mods[2].function(sym.gemv);
++        k.gemv_columns = if (std.c.getenv("TF_QWEN27_GEMV_COLUMNS")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 64 else 64;
++        const gemv_stages: usize = if (std.c.getenv("TF_QWEN27_GEMV_STAGES")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 8 else 8;
++        k.gemv_match_columns = if (std.c.getenv("TF_QWEN27_GEMV_MATCH_COLUMNS")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 0 else 0;
++        k.gemv_min_columns = if (std.c.getenv("TF_QWEN27_GEMV_MIN_COLUMNS")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 0 else 0;
++        k.gemv_shared = if (k.gemv_columns == 32) 13056 else if (gemv_stages == 4) 17664 else group_smem;
++        k.gemv = try k.mods[2].function(if (k.gemv_columns == 32) "_ZN12tf_lane_gemv12gemv_kernelILi64ELi32ELi4EEEvPK13__nv_bfloat16PKfNS_4PartEiii" else if (gemv_stages == 4) "_ZN12tf_lane_gemv12gemv_kernelILi64ELi64ELi4EEEvPK13__nv_bfloat16PKfNS_4PartEiii" else sym.gemv);
+         k.pattn = try k.mods[3].function(sym.pattn);
+         k.pattn8 = try k.mods[3].function(sym.pattn8);
+         for (&k.trees, cuda.kernels.gdn_variants) |*f, v| f.* = try k.mods[4].function(v.symbol);
+-        k.replay = try k.mods[4].function(cuda.kernels.gdn_symbols.replay_bf16);
++        const replay = if (std.c.getenv("TF_QWEN27_REPLAY")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 84 else 84;
++        k.replay_r = switch (replay) { 44, 48 => 4, 28 => 2, else => 8 };
++        k.replay_warps = switch (replay) { 48, 28 => 8, else => 4 };
++        k.replay = try k.mods[4].function(switch (replay) {
++            44 => "_ZN6tf_gdn13replay_kernelI13__nv_bfloat16Li4ELi4EEEvPKxiPKiiS5_iPfiii",
++            48 => "_ZN6tf_gdn13replay_kernelI13__nv_bfloat16Li4ELi8EEEvPKxiPKiiS5_iPfiii",
++            28 => "_ZN6tf_gdn13replay_kernelI13__nv_bfloat16Li2ELi8EEEvPKxiPKiiS5_iPfiii",
++            else => cuda.kernels.gdn_symbols.replay_bf16,
++        });
+         k.pack_dense = try k.mods[6].function(cuda.qlinear.symbols.pack_words);
+         k.transpose16 = try k.mods[6].function(cuda.qlinear.symbols.pack_scales);
+         k.argmax = try k.mods[7].function(sym.argmax);
+@@ -121,17 +167,21 @@ pub const Kernels = struct {
+         k.prompt_chain = try k.mods[5].function(if (k.prompt_rows == 128) sym.chain128 else sym.chain64);
+         k.triton = try cuda.aot.Set.load(gpa, io, d, ctx.device, triton_dir);
+         errdefer k.triton.deinit();
+-        try k.group.allowDynamicShared(group_smem);
++        try k.group.allowDynamicShared(k.group_shared);
+         for (k.wide, wide) |f, t| try f.allowDynamicShared(t.smem);
+-        try k.gemv.allowDynamicShared(group_smem);
++        try k.gemv.allowDynamicShared(k.gemv_shared);
+         try k.prefill_mm.allowDynamicShared(prefill_mm_smem);
+         try k.pattn.allowDynamicShared(pattn_smem);
+         try k.pattn8.allowDynamicShared(pattn_smem);
+-        k.gemv_blocks = @max(1, try k.gemv.occupancy(128, group_smem)) * sms;
++        k.gemv_blocks = @max(1, try k.gemv.occupancy(128, k.gemv_shared)) * sms;
+         const major = try ctx.attribute(.compute_capability_major);
+         const minor = try ctx.attribute(.compute_capability_minor);
+         k.gb10 = major == 12 and minor == 1;
+         k.discrete = try ctx.attribute(.integrated) == 0;
++        k.fuse_aux = if (std.c.getenv("TF_QWEN27_FUSE_AUX")) |v| std.mem.eql(u8, std.mem.span(v), "1") else false;
++        k.fuse_kv = if (std.c.getenv("TF_QWEN27_FUSE_KV")) |v| std.mem.eql(u8, std.mem.span(v), "1") else false;
++        k.fuse_pairs = if (std.c.getenv("TF_QWEN27_FUSE_PAIRS")) |v| std.mem.eql(u8, std.mem.span(v), "1") else false;
++        k.wide_policy = if (std.c.getenv("TF_QWEN27_WIDE_POLICY")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 0 else 0;
+         k.gemv_rows = 0; // a GB10 runs the 27B's projections faster in Python's clusters, 1 to 16 rows alike
+         if (std.c.getenv("TF_QWEN27_GEMV_ROWS")) |v| k.gemv_rows = std.fmt.parseInt(usize, std.mem.span(v), 10) catch k.gemv_rows;
+         k.chip = .{ major, minor, @intCast(sms) };
+@@ -146,10 +196,11 @@ pub const Kernels = struct {
+ 
+ /// qmm.split_k: K slices fixed by the weight's shape, never by the row count.
+ pub fn splitK(n: usize, k: usize) usize {
++    const split_threshold = if (std.c.getenv("TF_QWEN27_SPLIT_THRESHOLD")) |v| std.fmt.parseInt(usize, std.mem.span(v), 10) catch 192 else 192;
+     const tiles = (n + 63) / 64;
+     const groups = k / 64;
+     var sk: usize = 1;
+-    while (sk < 8 and tiles * sk < 192 and groups % (sk * 2) == 0 and groups / (sk * 2) >= 8) sk *= 2;
++    while (sk < 8 and tiles * sk < split_threshold and groups % (sk * 2) == 0 and groups / (sk * 2) >= 8) sk *= 2;
+     return sk;
+ }
+ 
+@@ -178,13 +229,13 @@ pub const Ops = struct {
+         const sk = splitK(q.n, q.k);
+         if (rows > 16) return o.wideTile(x, xs, q, out, rows, sk);
+         // Python's clusters, a CTA a K slice; lane_gemv (byte-equal) when TF_QWEN27_GEMV_ROWS asks for it
+-        return if (sk > 1 and rows <= o.k.gemv_rows) o.gemv(x, xs, q, out, rows, sk) else o.cluster(x, xs, q, out, rows, sk);
++        return if (rows <= o.k.gemv_rows and q.n >= o.k.gemv_min_columns and (if (o.k.gemv_match_columns != 0) q.n == o.k.gemv_match_columns else sk > 1)) o.gemv(x, xs, q, out, rows, sk) else o.cluster(x, xs, q, out, rows, sk);
+     }
+ 
+     /// qmm.matmul at a K split the caller names (matmul_rows takes the stacked weight's for each part).
+     pub fn denseSplit(o: Ops, x: u64, xs: u64, q: QLinear, out: u64, rows: usize, sk: usize) !void {
+         if (rows > 16) return o.wideTile(x, xs, q, out, rows, sk);
+-        return if (sk > 1 and rows <= o.k.gemv_rows) o.gemv(x, xs, q, out, rows, sk) else o.cluster(x, xs, q, out, rows, sk);
++        return if (rows <= o.k.gemv_rows and q.n >= o.k.gemv_min_columns and (if (o.k.gemv_match_columns != 0) q.n == o.k.gemv_match_columns else sk > 1)) o.gemv(x, xs, q, out, rows, sk) else o.cluster(x, xs, q, out, rows, sk);
+     }
+ 
+     /// tree_forward's taps: bf16(x + pending) of `rows` rows into columns [col, col + d) of rows `stride` wide.
+@@ -197,19 +248,19 @@ pub const Ops = struct {
+ 
+     /// lane_gemv: every K slice of a column tile in one CTA, summed in slice order, CTAs looping over the tiles.
+     fn gemv(o: Ops, x: u64, xs: u64, q: QLinear, out: u64, rows: usize, sk: usize) !void {
+-        const tiles = (q.n + 63) / 64;
++        const tiles = (q.n + o.k.gemv_columns - 1) / o.k.gemv_columns;
+         var a: cuda.Args = .{};
+         a.add(x);
+         a.add(xs);
+         a.add(GemvPart{ .w = q.w, .scales = q.s, .biases = q.b, .out = out, .n = int(q.n), .npad = int(q.npad), .sk = int(sk), .tiles = int(tiles) });
+         for ([_]usize{ rows, q.k, q.k }) |v| a.add(int(v));
+-        const cfg: cuda.Config = .{ .grid = .{ .x = u(@min(tiles, o.k.gemv_blocks)) }, .block = .{ .x = 128 }, .shared = group_smem, .pdl = o.k.gb10 };
++        const cfg: cuda.Config = .{ .grid = .{ .x = u(@min(tiles, o.k.gemv_blocks)) }, .block = .{ .x = 128 }, .shared = o.k.gemv_shared, .pdl = o.k.gb10 };
+         try cuda.launch.launch(o.k.gemv, cfg, o.s, &a);
+     }
+ 
+     /// qmm_group's tile 2 with one K slice: a CTA a column tile.
+     fn cluster(o: Ops, x: u64, xs: u64, q: QLinear, out: u64, rows: usize, sk: usize) !void {
+-        const tiles = (q.n + 63) / 64;
++        const tiles = (q.n + o.k.group_columns - 1) / o.k.group_columns;
+         var parts: Parts = std.mem.zeroes(Parts);
+         parts.count = 1;
+         parts.p[0] = .{ .w = q.w, .scales = q.s, .biases = q.b, .out = out, .n = int(q.n), .npad = int(q.npad), .sk = int(sk), .tiles = int(tiles), .first = 0 };
+@@ -221,17 +272,67 @@ pub const Ops = struct {
+         for ([_]usize{ rows, q.k, q.k, rows_t, sk }) |v| a.add(int(v));
+         const cfg: cuda.Config = .{
+             .grid = .{ .x = u(rows_t * tiles * sk) },
+-            .block = .{ .x = 128 },
+-            .shared = group_smem,
++            .block = .{ .x = o.k.group_threads },
++            .shared = o.k.group_shared,
+             .cluster = if (sk > 1) .{ .x = u(sk) } else null,
+             .pdl = o.k.gb10,
+         };
+         try cuda.launch.launch(o.k.group, cfg, o.s, &a);
+     }
+ 
++    fn wideIndex(o: Ops, rows: usize) usize {
++        return switch (o.k.wide_policy) {
++            1 => 0,
++            2 => if (rows <= 32) 0 else 1,
++            3 => 2,
++            4 => 3,
++            5 => 4,
++            6 => if (rows <= 32) 0 else if (rows <= 64) 5 else 2,
++            7 => if (rows <= 32) 0 else if (rows <= 64) 6 else 2,
++            8 => if (rows <= 32) 0 else if (rows <= 64) 5 else 7,
++            9 => if (rows <= 32) 0 else if (rows <= 64) 1 else 8,
++            10 => if (rows <= 32) 0 else 8,
++            else => if (rows <= 32) 0 else if (rows <= 64) 1 else 2,
++        };
++    }
++
++    /// Independent gate/up projections in a shared grid, retaining each tile's K slices and reduction order.
++    pub fn densePair(o: Ops, x: u64, xs: u64, qa: QLinear, qb: QLinear, oa: u64, ob: u64, rows: usize) !void {
++        return o.pair(x, xs, qa, qb, oa, ob, rows, o.k.fuse_pairs);
++    }
++    pub fn denseAux(o: Ops, x: u64, xs: u64, qa: QLinear, qb: QLinear, oa: u64, ob: u64, rows: usize) !void {
++        return o.pair(x, xs, qa, qb, oa, ob, rows, o.k.fuse_aux);
++    }
++    pub fn denseKV(o: Ops, x: u64, xs: u64, qa: QLinear, qb: QLinear, oa: u64, ob: u64, rows: usize) !void {
++        return o.pair(x, xs, qa, qb, oa, ob, rows, o.k.fuse_kv);
++    }
++    fn pair(o: Ops, x: u64, xs: u64, qa: QLinear, qb: QLinear, oa: u64, ob: u64, rows: usize, enabled: bool) !void {
++        const sk = splitK(qa.n, qa.k);
++        if (!enabled or qa.k != qb.k or sk != splitK(qb.n, qb.k) or (sk > 1 and rows <= o.k.gemv_rows)) {
++            try o.dense(x, xs, qa, oa, rows);
++            return o.dense(x, xs, qb, ob, rows);
++        }
++        const i = o.wideIndex(rows);
++        const t: Wide = if (rows > 16) wide[i] else .{ .bm = 16, .bn = o.k.group_columns, .threads = o.k.group_threads, .smem = o.k.group_shared };
++        const rt = (rows + t.bm - 1) / t.bm;
++        var parts: Parts = std.mem.zeroes(Parts);
++        parts.count = 2;
++        var first: usize = 0;
++        for ([_]QLinear{qa, qb}, [_]u64{oa, ob}, 0..) |q, out, j| {
++            const tiles = (q.n + t.bn - 1) / t.bn;
++            parts.p[j] = .{ .w = q.w, .scales = q.s, .biases = q.b, .out = out, .n = int(q.n), .npad = int(q.npad), .sk = int(sk), .tiles = int(tiles), .first = int(first) };
++            first += rt * tiles;
++        }
++        var a: cuda.Args = .{};
++        a.add(x); a.add(xs); a.add(parts);
++        for ([_]usize{ rows, qa.k, qa.k, rt, sk }) |v| a.add(int(v));
++        const cfg: cuda.Config = .{ .grid = .{ .x = u(first * sk) }, .block = .{ .x = t.threads }, .shared = t.smem, .cluster = if (sk > 1) .{ .x = u(sk) } else null, .pdl = o.k.gb10 };
++        try cuda.launch.launch(if (rows > 16) o.k.wide[i] else o.k.group, cfg, o.s, &a);
++    }
++
+     /// qmm_group's dispatch on a GB10 past 16 rows: tile 3, 4 or 5, a cluster of `sk` CTAs a column tile.
+     fn wideTile(o: Ops, x: u64, xs: u64, q: QLinear, out: u64, rows: usize, sk: usize) !void {
+-        const i: usize = if (rows <= 32) 0 else if (rows <= 64) 1 else 2;
++        const i: usize = o.wideIndex(rows);
+         const t = wide[i];
+         const tiles = (q.n + t.bn - 1) / t.bn;
+         const rows_t = (rows + t.bm - 1) / t.bm;
+@@ -294,7 +395,7 @@ pub const Ops = struct {
+         a.add(int(count_stride));
+         a.add(@as(u64, 0));
+         for ([_]usize{ h.hk, h.hv, h.dv }) |x| a.add(int(x));
+-        try o.go(o.k.replay, .{ (h.dv + 31) / 32, h.hv, layers * streams }, 128, 0, &a);
++        try o.go(o.k.replay, .{ (h.dv + o.k.replay_r * o.k.replay_warps - 1) / (o.k.replay_r * o.k.replay_warps), h.hv, layers * streams }, u(32 * o.k.replay_warps), 0, &a);
+     }
+ 
+     /// gdn.chain: a prompt chunk's rows from `state` (read only) to `last`, chunk-invariant bits.
+diff --git i/zig/src/families/qwen27/cuda/lanes.zig w/zig/src/families/qwen27/cuda/lanes.zig
+index acbd27a..07b6e99 100644
+--- i/zig/src/families/qwen27/cuda/lanes.zig
++++ w/zig/src/families/qwen27/cuda/lanes.zig
+@@ -103,6 +103,18 @@ pub const Cuda = struct {
+     pub fn calibrate(x: *Cuda, io: std.Io, streams: usize) !void {
+         var seq = x.e.sequence(st.max_rows + 2) catch |err| return if (err == error.OutOfMemory) err else error.OutOfDeviceMemory;
+         defer seq.deinit();
++        const distinct = if (std.c.getenv("TF_QWEN27_CALIBRATE_DISTINCT")) |v| std.mem.eql(u8, std.mem.span(v), "1") else false;
++        const commit = if (std.c.getenv("TF_QWEN27_CALIBRATE_COMMIT")) |v| std.mem.eql(u8, std.mem.span(v), "1") else false;
++        var pool: [st.max_streams]st.Seq = undefined;
++        var ready: usize = 0;
++        defer for (pool[0..ready]) |*s| s.deinit();
++        if (distinct) for (1..@min(streams, st.max_streams)) |_| {
++            pool[ready] = try x.e.sequence(st.max_rows + 2);
++            ready += 1;
++        };
++        const path = [_]u32{0};
++        var paths: [st.max_streams][]const u32 = undefined;
++        for (&paths) |*p| p.* = &path;
+         const zeros: [st.max_rows]u32 = @splat(0);
+         const most: usize = st.max_rows * @as(usize, @min(streams, st.max_streams));
+         var rows: [calibration.len + 1]usize = undefined;
+@@ -118,12 +130,14 @@ pub const Cuda = struct {
+         for (rows[0..n], x.costs[0..n]) |r, *cost| {
+             const parts_n = (r + st.max_rows - 1) / st.max_rows;
+             var parts: [st.max_streams]Part = undefined;
+-            for (parts[0..parts_n], 0..) |*part, i| part.* = .{ .seq = &seq, .tokens = zeros[0 .. r / parts_n + @intFromBool(i < r % parts_n)] };
++            for (parts[0..parts_n], 0..) |*part, i| part.* = .{ .seq = if (distinct and i > 0) &pool[i - 1] else &seq, .tokens = zeros[0 .. r / parts_n + @intFromBool(i < r % parts_n)] };
+             var times: [3]f64 = undefined;
+             for (0..4) |rep| {
++                for (parts[0..parts_n]) |p| p.seq.pos = 0;
+                 try f.ops.s.synchronize();
+                 const t0 = clock.now(io).toNanoseconds();
+                 try f.round(parts[0..parts_n]);
++                if (commit) try f.commit(parts[0..parts_n], paths[0..parts_n]);
+                 try f.ops.s.synchronize();
+                 if (rep > 0) times[rep - 1] = @as(f64, @floatFromInt(clock.now(io).toNanoseconds() - t0)) / 1e6;
+             }
+@@ -178,7 +192,12 @@ pub const Cuda = struct {
+         const rows = positions.len;
+         var f = x.e.forward();
+         const s = f.s;
+-        try f.picks(rows, out[0..rows]);
++        const skip = if (std.c.getenv("TF_QWEN27_SKIP_SAMPLED_ARGMAX")) |v| std.mem.eql(u8, std.mem.span(v), "1") else false;
++        var need_greedy = !skip;
++        if (skip) for (rules) |rule| {
++            if (rule) |r| { if (r.temperature <= 0) { need_greedy = true; break; } } else { need_greedy = true; break; }
++        };
++        if (need_greedy) try f.picks(rows, out[0..rows]);
+         var want: usize = 0;
+         for (rules) |r| if (r) |rule| if (rule.temperature > 0 and rule.top_k != 0) {
+             want = @max(want, @min(c.vocab, @as(usize, rule.top_k) + 8));
+diff --git i/zig/src/families/qwen27/cuda/state.zig w/zig/src/families/qwen27/cuda/state.zig
+index 433102b..706eaa4 100644
+--- i/zig/src/families/qwen27/cuda/state.zig
++++ w/zig/src/families/qwen27/cuda/state.zig
+@@ -11,7 +11,7 @@ const torch_ops = kern.torch_ops;
+ /// The most rows a stream's verify window takes (the multi-stream GDN tree kernel's limit).
+ pub const max_rows = 16;
+ /// The most streams a shared round takes.
+-pub const max_streams = 16;
++pub const max_streams = 32;
+ /// The most rows a verify round takes: every stream's whole window.
+ pub const round_rows = max_rows * max_streams;
+ /// The most items a batched copy takes: every stream's layers, three rows or a key and a value each.

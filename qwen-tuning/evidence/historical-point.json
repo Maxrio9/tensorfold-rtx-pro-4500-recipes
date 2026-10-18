@@ -1,0 +1,14 @@
+{
+  "label": "Early Python CUDA recipe, 17 October 2026",
+  "prose_decode_tok_s": 92.4,
+  "code_decode_tok_s": 121.1,
+  "repetitions_per_task": 3,
+  "output_tokens": 512,
+  "context_capacity": 4096,
+  "engine": "jkuepker/TensorFold Python CUDA integration",
+  "engine_commit": "93fcf31c5bd861e5edb98ebf89d40e74b60b2d22",
+  "target": "turboderp/Qwen3.8-27B-exl3 SC5bpw-H6-V6",
+  "target_revision": "f33f26d929e2b20ef21361145d582f5239e3831f",
+  "drafter": "z-lab/Qwen3.8-27B-DFlash2",
+  "note": "Historical recipe and target differ from the native affine4/g64 rows. Not a matched early-to-native speedup or pure Python-vs-native ablation."
+}

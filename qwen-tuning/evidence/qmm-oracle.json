@@ -1,0 +1,1296 @@
+{
+  "reference": "Real affine4 codes/scales/biases decoded directly in FP64, full-K FP64 product. Changed launch layouts retain exact K split and operation order. Microbench uses20launches at fixed deterministic data; not a server decode score. Predicted occupancy excludes cluster placement.",
+  "results": [
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        1,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.012781194905983284,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.012781194905983284,
+          "mean_column_max_abs_error": 0.0008253927223724885,
+          "microbench_us": 44.0095990896225,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.012781194905983284,
+          "mean_column_max_abs_error": 0.0008253927223724885,
+          "microbench_us": 37.18400001525879,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.012781194905983284,
+          "mean_column_max_abs_error": 0.0008253927223724885,
+          "microbench_us": 44.8063999414444,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        8,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.01316391644650139,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.01316391644650139,
+          "mean_column_max_abs_error": 0.002319674547985533,
+          "microbench_us": 45.446398854255676,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.01316391644650139,
+          "mean_column_max_abs_error": 0.002319674547985533,
+          "microbench_us": 39.44000005722046,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.01316391644650139,
+          "mean_column_max_abs_error": 0.002319674547985533,
+          "microbench_us": 46.68479859828949,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        16,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.015376086696051061,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015376086696051061,
+          "mean_column_max_abs_error": 0.0029180352335551997,
+          "microbench_us": 48.390400409698486,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015376086696051061,
+          "mean_column_max_abs_error": 0.0029180352335551997,
+          "microbench_us": 41.66080057621002,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015376086696051061,
+          "mean_column_max_abs_error": 0.0029180352335551997,
+          "microbench_us": 49.14239943027496,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        31,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m32",
+      "baseline_max_abs_error": 0.013169231708161533,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.013169231708161533,
+          "mean_column_max_abs_error": 0.003433896367115676,
+          "microbench_us": 66.0640001296997,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.013169231708161533,
+          "mean_column_max_abs_error": 0.003433896367115676,
+          "microbench_us": 97.59520292282104,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.013169231708161533,
+          "mean_column_max_abs_error": 0.003433896367115676,
+          "microbench_us": 98.80959987640381,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.013169231708161533,
+          "mean_column_max_abs_error": 0.003433896367115676,
+          "microbench_us": 213.06400299072266,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.013169231708161533,
+          "mean_column_max_abs_error": 0.003433896367115676,
+          "microbench_us": 195.93600034713745,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        64,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n64",
+      "baseline_max_abs_error": 0.015588157169986516,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015588157169986516,
+          "mean_column_max_abs_error": 0.003964553365797505,
+          "microbench_us": 115.15519618988037,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015588157169986516,
+          "mean_column_max_abs_error": 0.003964553365797505,
+          "microbench_us": 106.84640407562256,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015588157169986516,
+          "mean_column_max_abs_error": 0.003964553365797505,
+          "microbench_us": 105.96480369567871,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015588157169986516,
+          "mean_column_max_abs_error": 0.003964553365797505,
+          "microbench_us": 222.35040664672852,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015588157169986516,
+          "mean_column_max_abs_error": 0.003964553365797505,
+          "microbench_us": 199.7040033340454,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        65,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.015235714876325801,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015235714876325801,
+          "mean_column_max_abs_error": 0.0039671624648163146,
+          "microbench_us": 155.82720041275024,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015235714876325801,
+          "mean_column_max_abs_error": 0.0039671624648163146,
+          "microbench_us": 179.29919958114624,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015235714876325801,
+          "mean_column_max_abs_error": 0.0039671624648163146,
+          "microbench_us": 193.4607982635498,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015235714876325801,
+          "mean_column_max_abs_error": 0.0039671624648163146,
+          "microbench_us": 223.27520847320557,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015235714876325801,
+          "mean_column_max_abs_error": 0.0039671624648163146,
+          "microbench_us": 199.98559951782227,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        128,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.014840449555777013,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014840449555777013,
+          "mean_column_max_abs_error": 0.0044554709987030565,
+          "microbench_us": 222.72319793701172,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014840449555777013,
+          "mean_column_max_abs_error": 0.0044554709987030565,
+          "microbench_us": 196.45440578460693,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014840449555777013,
+          "mean_column_max_abs_error": 0.0044554709987030565,
+          "microbench_us": 206.90081119537354,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014840449555777013,
+          "mean_column_max_abs_error": 0.0044554709987030565,
+          "microbench_us": 245.35200595855713,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014840449555777013,
+          "mean_column_max_abs_error": 0.0044554709987030565,
+          "microbench_us": 216.16640090942383,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        192,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.014986153517384082,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014986153517384082,
+          "mean_column_max_abs_error": 0.004765019481187982,
+          "microbench_us": 321.18079662323,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014986153517384082,
+          "mean_column_max_abs_error": 0.004765019481187982,
+          "microbench_us": 279.2975902557373,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014986153517384082,
+          "mean_column_max_abs_error": 0.004765019481187982,
+          "microbench_us": 270.3887939453125,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014986153517384082,
+          "mean_column_max_abs_error": 0.004765019481187982,
+          "microbench_us": 423.42400550842285,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.014986153517384082,
+          "mean_column_max_abs_error": 0.004765019481187982,
+          "microbench_us": 418.2015895843506,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.gate_proj",
+      "shape": [
+        256,
+        17408,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.015608820132911205,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015608820132911205,
+          "mean_column_max_abs_error": 0.005051495926522934,
+          "microbench_us": 431.1583995819092,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015608820132911205,
+          "mean_column_max_abs_error": 0.005051495926522934,
+          "microbench_us": 383.8992118835449,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015608820132911205,
+          "mean_column_max_abs_error": 0.005051495926522934,
+          "microbench_us": 371.66240215301514,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015608820132911205,
+          "mean_column_max_abs_error": 0.005051495926522934,
+          "microbench_us": 446.4640140533447,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015608820132911205,
+          "mean_column_max_abs_error": 0.005051495926522934,
+          "microbench_us": 431.6160202026367,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        1,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.01332372729666531,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.01332372729666531,
+          "mean_column_max_abs_error": 0.0015364461568935896,
+          "microbench_us": 47.811201214790344,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.01332372729666531,
+          "mean_column_max_abs_error": 0.0015364461568935896,
+          "microbench_us": 43.20639967918396,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.01332372729666531,
+          "mean_column_max_abs_error": 0.0015364461568935896,
+          "microbench_us": 47.07359969615936,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        8,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.015587047033477575,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015587047033477575,
+          "mean_column_max_abs_error": 0.00452522592382536,
+          "microbench_us": 46.95360064506531,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015587047033477575,
+          "mean_column_max_abs_error": 0.00452522592382536,
+          "microbench_us": 45.233601331710815,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015587047033477575,
+          "mean_column_max_abs_error": 0.00452522592382536,
+          "microbench_us": 46.806401014328,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        16,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.03036098906886764,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.03036098906886764,
+          "mean_column_max_abs_error": 0.005630534532909338,
+          "microbench_us": 50.97759962081909,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.03036098906886764,
+          "mean_column_max_abs_error": 0.005630534532909338,
+          "microbench_us": 48.089599609375,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.03036098906886764,
+          "mean_column_max_abs_error": 0.005630534532909338,
+          "microbench_us": 55.636799335479736,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        31,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "m32",
+      "baseline_max_abs_error": 0.1079878402815666,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1079878402815666,
+          "mean_column_max_abs_error": 0.0066721080299405435,
+          "microbench_us": 65.32319784164429,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1079878402815666,
+          "mean_column_max_abs_error": 0.0066721080299405435,
+          "microbench_us": 97.62719869613647,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1079878402815666,
+          "mean_column_max_abs_error": 0.0066721080299405435,
+          "microbench_us": 100.96800327301025,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1079878402815666,
+          "mean_column_max_abs_error": 0.0066721080299405435,
+          "microbench_us": 215.4207944869995,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1079878402815666,
+          "mean_column_max_abs_error": 0.0066721080299405435,
+          "microbench_us": 199.88640546798706,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        64,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "m64n64",
+      "baseline_max_abs_error": 0.10599626554176211,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.10599626554176211,
+          "mean_column_max_abs_error": 0.007580676538594445,
+          "microbench_us": 129.639995098114,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.10599626554176211,
+          "mean_column_max_abs_error": 0.007580676538594445,
+          "microbench_us": 106.5600037574768,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.10599626554176211,
+          "mean_column_max_abs_error": 0.007580676538594445,
+          "microbench_us": 107.34720230102539,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.10599626554176211,
+          "mean_column_max_abs_error": 0.007580676538594445,
+          "microbench_us": 227.2320032119751,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.10599626554176211,
+          "mean_column_max_abs_error": 0.007580676538594445,
+          "microbench_us": 203.6288022994995,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        65,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.058514801086857915,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.058514801086857915,
+          "mean_column_max_abs_error": 0.00764806445352937,
+          "microbench_us": 183.37119817733765,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.058514801086857915,
+          "mean_column_max_abs_error": 0.00764806445352937,
+          "microbench_us": 191.6991949081421,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.058514801086857915,
+          "mean_column_max_abs_error": 0.00764806445352937,
+          "microbench_us": 196.668803691864,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.058514801086857915,
+          "mean_column_max_abs_error": 0.00764806445352937,
+          "microbench_us": 228.1183958053589,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.058514801086857915,
+          "mean_column_max_abs_error": 0.00764806445352937,
+          "microbench_us": 204.2367935180664,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        128,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.1096859848476015,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1096859848476015,
+          "mean_column_max_abs_error": 0.00838093775695268,
+          "microbench_us": 254.8095941543579,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1096859848476015,
+          "mean_column_max_abs_error": 0.00838093775695268,
+          "microbench_us": 213.15679550170898,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1096859848476015,
+          "mean_column_max_abs_error": 0.00838093775695268,
+          "microbench_us": 211.65919303894043,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1096859848476015,
+          "mean_column_max_abs_error": 0.00838093775695268,
+          "microbench_us": 252.19199657440186,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1096859848476015,
+          "mean_column_max_abs_error": 0.00838093775695268,
+          "microbench_us": 222.36320972442627,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        192,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.1217703107977286,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1217703107977286,
+          "mean_column_max_abs_error": 0.008885059794205286,
+          "microbench_us": 376.62880420684814,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1217703107977286,
+          "mean_column_max_abs_error": 0.008885059794205286,
+          "microbench_us": 312.4239921569824,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1217703107977286,
+          "mean_column_max_abs_error": 0.008885059794205286,
+          "microbench_us": 308.4815979003906,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1217703107977286,
+          "mean_column_max_abs_error": 0.008885059794205286,
+          "microbench_us": 475.6927967071533,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.1217703107977286,
+          "mean_column_max_abs_error": 0.008885059794205286,
+          "microbench_us": 424.6528148651123,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        256,
+        5120,
+        17408
+      ],
+      "split_k": 4,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.12393398853600956,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.12393398853600956,
+          "mean_column_max_abs_error": 0.009407998190800832,
+          "microbench_us": 504.1232109069824,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.12393398853600956,
+          "mean_column_max_abs_error": 0.009407998190800832,
+          "microbench_us": 411.24157905578613,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.12393398853600956,
+          "mean_column_max_abs_error": 0.009407998190800832,
+          "microbench_us": 410.67519187927246,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.12393398853600956,
+          "mean_column_max_abs_error": 0.009407998190800832,
+          "microbench_us": 497.819185256958,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.12393398853600956,
+          "mean_column_max_abs_error": 0.009407998190800832,
+          "microbench_us": 440.012788772583,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        1,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.015574631048366427,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015574631048366427,
+          "mean_column_max_abs_error": 0.0013884106452159983,
+          "microbench_us": 42.131200432777405,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015574631048366427,
+          "mean_column_max_abs_error": 0.0013884106452159983,
+          "microbench_us": 29.528000950813293,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015574631048366427,
+          "mean_column_max_abs_error": 0.0013884106452159983,
+          "microbench_us": 30.46559989452362,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        8,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.015606050903443247,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015606050903443247,
+          "mean_column_max_abs_error": 0.0039107406077049465,
+          "microbench_us": 39.97600078582764,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015606050903443247,
+          "mean_column_max_abs_error": 0.0039107406077049465,
+          "microbench_us": 30.94399869441986,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015606050903443247,
+          "mean_column_max_abs_error": 0.0039107406077049465,
+          "microbench_us": 31.969600915908813,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        16,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "s8",
+      "baseline_max_abs_error": 0.015592325711622834,
+      "candidates": {
+        "s8": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015592325711622834,
+          "mean_column_max_abs_error": 0.004866211621932829,
+          "microbench_us": 44.98400092124939,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "s4": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015592325711622834,
+          "mean_column_max_abs_error": 0.004866211621932829,
+          "microbench_us": 32.328000664711,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 5
+        },
+        "s6": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015592325711622834,
+          "mean_column_max_abs_error": 0.004866211621932829,
+          "microbench_us": 33.40640068054199,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        31,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m32",
+      "baseline_max_abs_error": 0.015620501348166727,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015620501348166727,
+          "mean_column_max_abs_error": 0.005792922988990071,
+          "microbench_us": 47.383999824523926,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015620501348166727,
+          "mean_column_max_abs_error": 0.005792922988990071,
+          "microbench_us": 78.16799879074097,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015620501348166727,
+          "mean_column_max_abs_error": 0.005792922988990071,
+          "microbench_us": 94.74400281906128,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015620501348166727,
+          "mean_column_max_abs_error": 0.005792922988990071,
+          "microbench_us": 159.65440273284912,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015620501348166727,
+          "mean_column_max_abs_error": 0.005792922988990071,
+          "microbench_us": 197.3296046257019,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        64,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n64",
+      "baseline_max_abs_error": 0.015623453655280173,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015623453655280173,
+          "mean_column_max_abs_error": 0.006728023028249272,
+          "microbench_us": 81.50560259819031,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015623453655280173,
+          "mean_column_max_abs_error": 0.006728023028249272,
+          "microbench_us": 84.59519743919373,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015623453655280173,
+          "mean_column_max_abs_error": 0.006728023028249272,
+          "microbench_us": 99.03039932250977,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015623453655280173,
+          "mean_column_max_abs_error": 0.006728023028249272,
+          "microbench_us": 165.08959531784058,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015623453655280173,
+          "mean_column_max_abs_error": 0.006728023028249272,
+          "microbench_us": 200.93920230865479,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        65,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.015610264497809112,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015610264497809112,
+          "mean_column_max_abs_error": 0.006811497995674554,
+          "microbench_us": 119.58080530166626,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015610264497809112,
+          "mean_column_max_abs_error": 0.006811497995674554,
+          "microbench_us": 130.1360011100769,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015610264497809112,
+          "mean_column_max_abs_error": 0.006811497995674554,
+          "microbench_us": 144.2639946937561,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015610264497809112,
+          "mean_column_max_abs_error": 0.006811497995674554,
+          "microbench_us": 165.4304027557373,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015610264497809112,
+          "mean_column_max_abs_error": 0.006811497995674554,
+          "microbench_us": 201.24800205230713,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        128,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.0156238287454471,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.0156238287454471,
+          "mean_column_max_abs_error": 0.007687638485517692,
+          "microbench_us": 160.6160044670105,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.0156238287454471,
+          "mean_column_max_abs_error": 0.007687638485517692,
+          "microbench_us": 142.0815944671631,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.0156238287454471,
+          "mean_column_max_abs_error": 0.007687638485517692,
+          "microbench_us": 154.5199990272522,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.0156238287454471,
+          "mean_column_max_abs_error": 0.007687638485517692,
+          "microbench_us": 181.50399923324585,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.0156238287454471,
+          "mean_column_max_abs_error": 0.007687638485517692,
+          "microbench_us": 212.63360977172852,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        192,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.015625528001692146,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015625528001692146,
+          "mean_column_max_abs_error": 0.008153623030818142,
+          "microbench_us": 238.03040981292725,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015625528001692146,
+          "mean_column_max_abs_error": 0.008153623030818142,
+          "microbench_us": 215.04158973693848,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015625528001692146,
+          "mean_column_max_abs_error": 0.008153623030818142,
+          "microbench_us": 209.71519947052002,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015625528001692146,
+          "mean_column_max_abs_error": 0.008153623030818142,
+          "microbench_us": 301.9263982772827,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.015625528001692146,
+          "mean_column_max_abs_error": 0.008153623030818142,
+          "microbench_us": 312.93439865112305,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.q_proj",
+      "shape": [
+        256,
+        12288,
+        5120
+      ],
+      "split_k": 1,
+      "baseline": "m64n128",
+      "baseline_max_abs_error": 0.026245879009366035,
+      "candidates": {
+        "m32": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.026245879009366035,
+          "mean_column_max_abs_error": 0.008529829989368316,
+          "microbench_us": 304.79679107666016,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 3
+        },
+        "m64n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.026245879009366035,
+          "mean_column_max_abs_error": 0.008529829989368316,
+          "microbench_us": 273.8719940185547,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m64n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.026245879009366035,
+          "mean_column_max_abs_error": 0.008529829989368316,
+          "microbench_us": 265.62719345092773,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 2
+        },
+        "m128n64": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.026245879009366035,
+          "mean_column_max_abs_error": 0.008529829989368316,
+          "microbench_us": 316.51999950408936,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        },
+        "m128n128": {
+          "bit_mismatches": 0,
+          "worse_columns": 0,
+          "max_abs_error": 0.026245879009366035,
+          "mean_column_max_abs_error": 0.008529829989368316,
+          "microbench_us": 319.79520320892334,
+          "predicted_blocks_per_sm_ignoring_cluster_placement": 1
+        }
+      }
+    }
+  ],
+  "elapsed_s": 2.5777018070220947,
+  "peak_torch_allocated_bytes": 926466560,
+  "fatbin_sha256": "46bd23cefb0418e389e93858600f52dccecab12d19f8984058cd26d93b740050",
+  "all_passed": true
+}

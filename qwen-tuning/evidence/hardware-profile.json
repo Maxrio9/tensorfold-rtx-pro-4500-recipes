@@ -1,0 +1,6 @@
+{
+  "sm_count": 82,
+  "l2_cache_bytes": 67108864,
+  "reported_memory_bandwidth_bytes_s": 896064000000,
+  "source": "Nsight Systems device metadata from the retained single-stream capture; not an achieved-bandwidth measurement."
+}

@@ -1,0 +1,12 @@
+{
+  "sha256": "e7d23ca8a3030996ba96f4860f965c27dd9414ebf0a812852796dafd8f292132",
+  "purpose": "Predeclaredheldoutthroughputprompts, beforechoosingfinalist. Do not tune against these after validation. Separate from objective quality fixture scores.",
+  "tasks": [
+    "heldout-code-bst",
+    "heldout-code-async",
+    "heldout-code-intervals",
+    "heldout-prose-dns",
+    "heldout-prose-transactions",
+    "heldout-prose-orbits"
+  ]
+}

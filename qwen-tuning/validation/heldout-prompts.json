@@ -1,0 +1,32 @@
+[
+  {
+    "id": "heldout-code-bst",
+    "task": "code",
+    "prompt": "Write a complete Python binary search tree with insertion, deletion, traversal, validation and extensive unittest examples. Provide at least2000 words of code and explanations."
+  },
+  {
+    "id": "heldout-code-async",
+    "task": "code",
+    "prompt": "Write a complete Python asyncio worker pool with bounded queues, cancellation, timeouts, retries and extensive unittest examples. Provide at least2000 words of code and explanations."
+  },
+  {
+    "id": "heldout-code-intervals",
+    "task": "code",
+    "prompt": "Write complete Python interval merge, intersection and subtraction functions with extensive unittest examples. Provide at least2000 words of code and explanations."
+  },
+  {
+    "id": "heldout-prose-dns",
+    "task": "prose",
+    "prompt": "Explain DNS resolution from an application through caches, recursive and authoritative servers, DNSSEC and failure handling. Give detailed practical examples. Write at least2000 words."
+  },
+  {
+    "id": "heldout-prose-transactions",
+    "task": "prose",
+    "prompt": "Explain database transactions, isolation levels, MVCC, deadlocks and crash recovery, with detailed practical examples. Write at least2000 words."
+  },
+  {
+    "id": "heldout-prose-orbits",
+    "task": "prose",
+    "prompt": "Explain orbital mechanics, conservation laws, transfer orbits and escape velocity, with detailed worked conceptual examples. Write at least2000 words."
+  }
+]

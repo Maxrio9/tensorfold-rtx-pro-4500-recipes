@@ -1,0 +1,20 @@
+{
+  "name": "HumanEval+",
+  "dataset_release": "v0.1.10",
+  "dataset_sha256": "42526ec0e7d5f3ee0b06d6ced98f8c8bae3d76519151bfb3d36f79010645bd7f",
+  "evalplus_commit": "26d6d00bb1fd0fa37f39c99d5290da67891d1c5e",
+  "tasks": 164,
+  "source": "https://github.com/evalplus/humanevalplus_release/releases/tag/v0.1.10",
+  "generated_code_execution": "GPU-free, network-disabled, read-only Docker sandbox; official EvalPlus untrusted_check",
+  "quality_limitations": [
+    "Established public coding tasks can be training-contaminated",
+    "Custom chat generation protocol; not a directly comparable external leaderboard score",
+    "Practical task categories are separately scored; no universal composite or uncalibrated model judge"
+  ],
+  "reference_selfcheck": {
+    "canonical_passed": 163,
+    "tasks": 164,
+    "exception": "HumanEval/32 supplied reference and an independently bracketed float root fail an official residual test because of floating-point cancellation; a nearby4097-float scan did not meet tolerance. Official model tests remain unchanged.",
+    "reporting": "Report full164-task score and secondary score excluding HumanEval/32, registered before examining model coding scores"
+  }
+}

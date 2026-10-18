@@ -1,0 +1,13 @@
+{
+  "baseline_run": "20261018T071658Z-final-full164-baseline",
+  "candidate_run": "20261018T072419Z-final-full164-single",
+  "baseline_plus_passed": 152,
+  "candidate_plus_passed": 153,
+  "total": 164,
+  "both_passed": 151,
+  "baseline_only_passed": 1,
+  "candidate_only_passed": 2,
+  "both_failed": 10,
+  "interpretation": "One generation per task. This one-task aggregate difference doesnotestablishqualitysuperiorityornoninferiority. Changedfloatingpointreductionsanddraftpolicycanchangeoutputs. Onecandidate4096tokencompletionwastruncated; retainitsoriginalscore.",
+  "scope": "FullunchangedEvalPlusv0.1.10inputs,strictparser,knowncanonical32exceptionunchanged"
+}

@@ -1,0 +1,289 @@
+{
+  "protocol": {
+    "output_tokens": 512,
+    "thinking": false,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0,
+    "seed": 42,
+    "prefix_reuse": false,
+    "context": 2048,
+    "repetitions_per_task": 5,
+    "summary": "Mean across five repetitions; one excluded warmup per task; per-stream decode excludes the complete first delivered text block."
+  },
+  "runs": [
+    {
+      "run": "20261018T075600Z-final-confirm-single-0",
+      "configuration": {
+        "model": "qwen",
+        "cap": 1,
+        "context": 2048,
+        "phase": "burst",
+        "clients": "1",
+        "reps": 5,
+        "expert_stages": 1,
+        "mini_depth": 6,
+        "window_rows": 16,
+        "night_mini": false,
+        "plain": false,
+        "long_no_cache": false,
+        "prompt_cache_gib": null,
+        "reasoning_effort": null,
+        "memory_gib": 26,
+        "label": "final-confirm-single-0",
+        "skip_padded_rows": 0,
+        "direct_one": 0,
+        "gemv_match_columns": 0,
+        "gemv_columns": 64,
+        "gemv_stages": 8,
+        "gemv_min_columns": 0,
+        "draft_batch_block": 0,
+        "draft_batch_threshold": 8,
+        "closed_jobs": 6,
+        "small_tile": 0,
+        "split_threshold": 128,
+        "fuse_aux": 1,
+        "fuse_kv": 1,
+        "proposal_scale": 2.0,
+        "proposal_noise": 0.7,
+        "proposal_edge": 0.6,
+        "calibrate_distinct": 0,
+        "calibrate_commit": 0,
+        "replay": 84,
+        "skip_sampled_argmax": 0,
+        "engine": "tensorfold",
+        "ninfer_k": 7,
+        "draft_block": 16,
+        "group_stages": 4,
+        "branches": 4,
+        "fuse_pairs": 0,
+        "wide_policy": 0,
+        "profile": false,
+        "metrics": false,
+        "gemv": 0,
+        "kv_cache": "bf16"
+      },
+      "returncode": 0,
+      "guard_reasons": [],
+      "sampled_peak_additional_gb": 20.95054848,
+      "profiled": false,
+      "binary_sha256": "5ceb4b081f95a243c55fdf4870da677f8716253252c6ef463641f6f6e201a5da",
+      "tasks": {
+        "code": {
+          "reps": 5,
+          "requests": 5,
+          "errors": 0,
+          "fixed_budget_met": 5,
+          "aggregate_mean_tok_s": 208.2022724901687,
+          "aggregate_sd_tok_s": 15.63460107523268,
+          "mean_of_burst_median_per_stream_decode_tok_s": 215.4091963172508,
+          "per_stream_sd_tok_s": 16.75733035724071,
+          "mean_ttft_s": 0.08635134579672013,
+          "actual_prompt_tokens": [
+            63,
+            66,
+            67
+          ],
+          "actual_output_tokens": [
+            512
+          ],
+          "actual_cached_tokens": [
+            0
+          ]
+        },
+        "prose": {
+          "reps": 5,
+          "requests": 5,
+          "errors": 0,
+          "fixed_budget_met": 5,
+          "aggregate_mean_tok_s": 153.0186958100295,
+          "aggregate_sd_tok_s": 6.031988689402218,
+          "mean_of_burst_median_per_stream_decode_tok_s": 156.69902125824308,
+          "per_stream_sd_tok_s": 6.331396255605402,
+          "mean_ttft_s": 0.08465417840343434,
+          "actual_prompt_tokens": [
+            52,
+            53,
+            54,
+            55
+          ],
+          "actual_output_tokens": [
+            512
+          ],
+          "actual_cached_tokens": [
+            0
+          ]
+        }
+      },
+      "aggregate_geomean_tok_s": 178.4904484871109,
+      "effective_sampling": {
+        "presence_penalty": [
+          0
+        ],
+        "frequency_penalty": [
+          0
+        ],
+        "note": "TensorFold native sampler has no presence/frequency penalty path; explicit zero fields in later payloads preserve its original effective setting."
+      },
+      "server_spec_diagnostic_including_warmup": {
+        "requests": 12,
+        "tokens": 6144,
+        "rounds": 1284,
+        "accepted": 4863,
+        "drafted": 19260,
+        "output_tokens_per_round": 4.785046728971962,
+        "accepted_over_drafted": 0.25249221183800624
+      },
+      "active_gpu_telemetry": {
+        "scope": "Loaded samples with GPUutilizationatleast90percent and >10GBadditionalallocation; startup/calibration/warmup can be included. Stock200W; no clock-control or desktop/driver changes.",
+        "samples": 158,
+        "sm_clock_mhz_median": 2122.0,
+        "memory_clock_mhz_observed": [
+          13365
+        ],
+        "power_w_median": 199.99,
+        "software_power_cap_fraction": 1.0,
+        "thermal_slowdown_samples": 0,
+        "hardware_power_brake_samples": 0,
+        "maximum_temperature_c": 73
+      }
+    },
+    {
+      "run": "20261018T080422Z-final-confirm-baseline-single-0",
+      "configuration": {
+        "model": "qwen",
+        "cap": 1,
+        "context": 2048,
+        "phase": "burst",
+        "clients": "1",
+        "reps": 5,
+        "expert_stages": 1,
+        "mini_depth": 6,
+        "window_rows": 16,
+        "night_mini": false,
+        "plain": false,
+        "long_no_cache": false,
+        "prompt_cache_gib": null,
+        "reasoning_effort": null,
+        "memory_gib": 26,
+        "label": "final-confirm-baseline-single-0",
+        "skip_padded_rows": 0,
+        "direct_one": 0,
+        "gemv_match_columns": 0,
+        "gemv_columns": 64,
+        "gemv_stages": 8,
+        "gemv_min_columns": 0,
+        "draft_batch_block": 0,
+        "draft_batch_threshold": 8,
+        "closed_jobs": 6,
+        "small_tile": 0,
+        "split_threshold": 192,
+        "fuse_aux": 0,
+        "fuse_kv": 0,
+        "proposal_scale": 1.5,
+        "proposal_noise": 0.7,
+        "proposal_edge": 0.6,
+        "calibrate_distinct": 0,
+        "calibrate_commit": 0,
+        "replay": 84,
+        "skip_sampled_argmax": 0,
+        "engine": "tensorfold",
+        "ninfer_k": 7,
+        "draft_block": 16,
+        "group_stages": 8,
+        "branches": 4,
+        "fuse_pairs": 0,
+        "wide_policy": 0,
+        "profile": false,
+        "metrics": false,
+        "gemv": 0,
+        "kv_cache": "bf16"
+      },
+      "returncode": 0,
+      "guard_reasons": [],
+      "sampled_peak_additional_gb": 20.789067776,
+      "profiled": false,
+      "binary_sha256": "b09a48a2d4a3b1dc3409653ae3234deb4605c2bf9327fda2f841a324e4596c63",
+      "tasks": {
+        "code": {
+          "reps": 5,
+          "requests": 5,
+          "errors": 0,
+          "fixed_budget_met": 5,
+          "aggregate_mean_tok_s": 181.72584913663064,
+          "aggregate_sd_tok_s": 15.097005239438616,
+          "mean_of_burst_median_per_stream_decode_tok_s": 187.1788007246272,
+          "per_stream_sd_tok_s": 16.058712442671638,
+          "mean_ttft_s": 0.08671114180469885,
+          "actual_prompt_tokens": [
+            63,
+            66,
+            67
+          ],
+          "actual_output_tokens": [
+            512
+          ],
+          "actual_cached_tokens": [
+            0
+          ]
+        },
+        "prose": {
+          "reps": 5,
+          "requests": 5,
+          "errors": 0,
+          "fixed_budget_met": 5,
+          "aggregate_mean_tok_s": 137.7139129138559,
+          "aggregate_sd_tok_s": 6.348929642020023,
+          "mean_of_burst_median_per_stream_decode_tok_s": 140.6770038204719,
+          "per_stream_sd_tok_s": 6.646328972338143,
+          "mean_ttft_s": 0.08502592160075437,
+          "actual_prompt_tokens": [
+            52,
+            53,
+            54,
+            55
+          ],
+          "actual_output_tokens": [
+            512
+          ],
+          "actual_cached_tokens": [
+            0
+          ]
+        }
+      },
+      "aggregate_geomean_tok_s": 158.19664270204493,
+      "effective_sampling": {
+        "presence_penalty": [
+          0
+        ],
+        "frequency_penalty": [
+          0
+        ],
+        "note": "TensorFold native sampler has no presence/frequency penalty path; explicit zero fields in later payloads preserve its original effective setting."
+      },
+      "server_spec_diagnostic_including_warmup": {
+        "requests": 12,
+        "tokens": 6144,
+        "rounds": 1342,
+        "accepted": 4835,
+        "drafted": 20130,
+        "output_tokens_per_round": 4.578241430700447,
+        "accepted_over_drafted": 0.24018877297565822
+      },
+      "active_gpu_telemetry": {
+        "scope": "Loaded samples with GPUutilizationatleast90percent and >10GBadditionalallocation; startup/calibration/warmup can be included. Stock200W; no clock-control or desktop/driver changes.",
+        "samples": 171,
+        "sm_clock_mhz_median": 2272,
+        "memory_clock_mhz_observed": [
+          13365
+        ],
+        "power_w_median": 199.99,
+        "software_power_cap_fraction": 1.0,
+        "thermal_slowdown_samples": 0,
+        "hardware_power_brake_samples": 0,
+        "maximum_temperature_c": 75
+      }
+    }
+  ]
+}

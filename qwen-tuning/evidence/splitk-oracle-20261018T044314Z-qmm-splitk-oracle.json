@@ -1,0 +1,977 @@
+{
+  "all_passed": true,
+  "results": [
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        1,
+        5120,
+        17408
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.015220470173517242,
+          "baseline_max_abs_error": 0.015220470173517242,
+          "p99_abs_error": 0.007312375751353106,
+          "baseline_p99_abs_error": 0.007312375751353106,
+          "cold_microbench_us": 75.1648023724556,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.015220470173517242,
+          "baseline_max_abs_error": 0.015220470173517242,
+          "p99_abs_error": 0.007312375751353106,
+          "baseline_p99_abs_error": 0.007312375751353106,
+          "cold_microbench_us": 77.41759866476059,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 2,
+          "bit_mismatch_fraction": 0.000390625,
+          "max_abs_error": 0.015220470173517242,
+          "baseline_max_abs_error": 0.015220470173517242,
+          "p99_abs_error": 0.007312375751353106,
+          "baseline_p99_abs_error": 0.007312375751353106,
+          "cold_microbench_us": 71.88160195946693,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 2,
+          "bit_mismatch_fraction": 0.000390625,
+          "max_abs_error": 0.015220470173517242,
+          "baseline_max_abs_error": 0.015220470173517242,
+          "p99_abs_error": 0.007312375751353106,
+          "baseline_p99_abs_error": 0.007312375751353106,
+          "cold_microbench_us": 74.28800240159035,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        8,
+        5120,
+        17408
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.024613441084511578,
+          "baseline_max_abs_error": 0.024613441084511578,
+          "p99_abs_error": 0.007416287763189749,
+          "baseline_p99_abs_error": 0.007416287763189749,
+          "cold_microbench_us": 76.18560194969177,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.024613441084511578,
+          "baseline_max_abs_error": 0.024613441084511578,
+          "p99_abs_error": 0.007416287763189749,
+          "baseline_p99_abs_error": 0.007416287763189749,
+          "cold_microbench_us": 81.10079765319824,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 16,
+          "bit_mismatch_fraction": 0.000390625,
+          "max_abs_error": 0.024613441084511578,
+          "baseline_max_abs_error": 0.024613441084511578,
+          "p99_abs_error": 0.007416287763189749,
+          "baseline_p99_abs_error": 0.007416287763189749,
+          "cold_microbench_us": 71.88480198383331,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 16,
+          "bit_mismatch_fraction": 0.000390625,
+          "max_abs_error": 0.024613441084511578,
+          "baseline_max_abs_error": 0.024613441084511578,
+          "p99_abs_error": 0.007416287763189749,
+          "baseline_p99_abs_error": 0.007416287763189749,
+          "cold_microbench_us": 83.55839848518372,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        16,
+        5120,
+        17408
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.07759386277757585,
+          "baseline_max_abs_error": 0.07759386277757585,
+          "p99_abs_error": 0.007427902809722581,
+          "baseline_p99_abs_error": 0.007427902809722581,
+          "cold_microbench_us": 78.23359742760658,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.07759386277757585,
+          "baseline_max_abs_error": 0.07759386277757585,
+          "p99_abs_error": 0.007427902809722581,
+          "baseline_p99_abs_error": 0.007427902809722581,
+          "cold_microbench_us": 89.70239982008934,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 20,
+          "bit_mismatch_fraction": 0.000244140625,
+          "max_abs_error": 0.07759386277757585,
+          "baseline_max_abs_error": 0.07759386277757585,
+          "p99_abs_error": 0.007427902809722581,
+          "baseline_p99_abs_error": 0.007427902809722581,
+          "cold_microbench_us": 73.72800260782242,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 20,
+          "bit_mismatch_fraction": 0.000244140625,
+          "max_abs_error": 0.07759386277757585,
+          "baseline_max_abs_error": 0.07759386277757585,
+          "p99_abs_error": 0.007427902809722581,
+          "baseline_p99_abs_error": 0.007427902809722581,
+          "cold_microbench_us": 97.68960177898407,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        64,
+        5120,
+        17408
+      ],
+      "candidates": {
+        "192-m64n64": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.06237055454403162,
+          "baseline_max_abs_error": 0.06237055454403162,
+          "p99_abs_error": 0.0073931515225558585,
+          "baseline_p99_abs_error": 0.0073931515225558585,
+          "cold_microbench_us": 110.82560047507286,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n64": {
+          "split_k": 2,
+          "bit_mismatches": 74,
+          "bit_mismatch_fraction": 0.000225830078125,
+          "max_abs_error": 0.06237055454403162,
+          "baseline_max_abs_error": 0.06237055454403162,
+          "p99_abs_error": 0.0073931515225558585,
+          "baseline_p99_abs_error": 0.0073931515225558585,
+          "cold_microbench_us": 106.32320046424866,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.mlp.down_proj",
+      "shape": [
+        128,
+        5120,
+        17408
+      ],
+      "candidates": {
+        "192-m64n128": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.09410478547215462,
+          "baseline_max_abs_error": 0.09410478547215462,
+          "p99_abs_error": 0.007391013743417716,
+          "baseline_p99_abs_error": 0.007391013743417716,
+          "cold_microbench_us": 212.61440515518188,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n128": {
+          "split_k": 2,
+          "bit_mismatches": 209,
+          "bit_mismatch_fraction": 0.00031890869140625,
+          "max_abs_error": 0.09410478547215462,
+          "baseline_max_abs_error": 0.09410478547215462,
+          "p99_abs_error": 0.007391013743417716,
+          "baseline_p99_abs_error": 0.007391013743417716,
+          "cold_microbench_us": 190.2911975979805,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.in_proj_qkv",
+      "shape": [
+        1,
+        10240,
+        5120
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.014734269003383815,
+          "baseline_max_abs_error": 0.014734269003383815,
+          "p99_abs_error": 0.006754962137638381,
+          "baseline_p99_abs_error": 0.006754962137638381,
+          "cold_microbench_us": 46.694400906562805,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.014734269003383815,
+          "baseline_max_abs_error": 0.014734269003383815,
+          "p99_abs_error": 0.006754962137638381,
+          "baseline_p99_abs_error": 0.006754962137638381,
+          "cold_microbench_us": 47.308801114559174,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 1,
+          "bit_mismatches": 2,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.014734269003383815,
+          "baseline_max_abs_error": 0.014734269003383815,
+          "p99_abs_error": 0.006754962137638381,
+          "baseline_p99_abs_error": 0.006754962137638381,
+          "cold_microbench_us": 44.03520002961159,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 1,
+          "bit_mismatches": 2,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.014734269003383815,
+          "baseline_max_abs_error": 0.014734269003383815,
+          "p99_abs_error": 0.006754962137638381,
+          "baseline_p99_abs_error": 0.006754962137638381,
+          "cold_microbench_us": 45.81120051443577,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.in_proj_qkv",
+      "shape": [
+        8,
+        10240,
+        5120
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.02280507329851389,
+          "baseline_max_abs_error": 0.02280507329851389,
+          "p99_abs_error": 0.006809528076846617,
+          "baseline_p99_abs_error": 0.006809528076846617,
+          "cold_microbench_us": 48.921601474285126,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.02280507329851389,
+          "baseline_max_abs_error": 0.02280507329851389,
+          "p99_abs_error": 0.006809528076846617,
+          "baseline_p99_abs_error": 0.006809528076846617,
+          "cold_microbench_us": 49.97120052576065,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 1,
+          "bit_mismatches": 15,
+          "bit_mismatch_fraction": 0.00018310546875,
+          "max_abs_error": 0.02280507329851389,
+          "baseline_max_abs_error": 0.02280507329851389,
+          "p99_abs_error": 0.006809528076846617,
+          "baseline_p99_abs_error": 0.006809528076846617,
+          "cold_microbench_us": 44.8512002825737,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 1,
+          "bit_mismatches": 15,
+          "bit_mismatch_fraction": 0.00018310546875,
+          "max_abs_error": 0.02280507329851389,
+          "baseline_max_abs_error": 0.02280507329851389,
+          "p99_abs_error": 0.006809528076846617,
+          "baseline_p99_abs_error": 0.006809528076846617,
+          "cold_microbench_us": 48.53760041296482,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.in_proj_qkv",
+      "shape": [
+        16,
+        10240,
+        5120
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.029964568559080362,
+          "baseline_max_abs_error": 0.029964568559080362,
+          "p99_abs_error": 0.006814610162982715,
+          "baseline_p99_abs_error": 0.006814610162982715,
+          "cold_microbench_us": 49.35680106282234,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.029964568559080362,
+          "baseline_max_abs_error": 0.029964568559080362,
+          "p99_abs_error": 0.006814610162982715,
+          "baseline_p99_abs_error": 0.006814610162982715,
+          "cold_microbench_us": 55.296000093221664,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 1,
+          "bit_mismatches": 29,
+          "bit_mismatch_fraction": 0.000177001953125,
+          "max_abs_error": 0.029964568559080362,
+          "baseline_max_abs_error": 0.029964568559080362,
+          "p99_abs_error": 0.006814610162982715,
+          "baseline_p99_abs_error": 0.006814610162982715,
+          "cold_microbench_us": 45.05600035190582,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 1,
+          "bit_mismatches": 29,
+          "bit_mismatch_fraction": 0.000177001953125,
+          "max_abs_error": 0.029964568559080362,
+          "baseline_max_abs_error": 0.029964568559080362,
+          "p99_abs_error": 0.006814610162982715,
+          "baseline_p99_abs_error": 0.006814610162982715,
+          "cold_microbench_us": 51.814400032162666,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.in_proj_qkv",
+      "shape": [
+        64,
+        10240,
+        5120
+      ],
+      "candidates": {
+        "192-m64n64": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.03095397900324315,
+          "baseline_max_abs_error": 0.03095397900324315,
+          "p99_abs_error": 0.006812643912853675,
+          "baseline_p99_abs_error": 0.006812643912853675,
+          "cold_microbench_us": 68.23040023446083,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n64": {
+          "split_k": 1,
+          "bit_mismatches": 121,
+          "bit_mismatch_fraction": 0.00018463134765625,
+          "max_abs_error": 0.03095397900324315,
+          "baseline_max_abs_error": 0.03095397900324315,
+          "p99_abs_error": 0.006812643912853675,
+          "baseline_p99_abs_error": 0.006812643912853675,
+          "cold_microbench_us": 65.75360111892223,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.in_proj_qkv",
+      "shape": [
+        128,
+        10240,
+        5120
+      ],
+      "candidates": {
+        "192-m64n128": {
+          "split_k": 2,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.03108839737251401,
+          "baseline_max_abs_error": 0.03108839737251401,
+          "p99_abs_error": 0.006812188012991102,
+          "baseline_p99_abs_error": 0.006812188012991102,
+          "cold_microbench_us": 121.8847967684269,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n128": {
+          "split_k": 1,
+          "bit_mismatches": 241,
+          "bit_mismatch_fraction": 0.000183868408203125,
+          "max_abs_error": 0.03108839737251401,
+          "baseline_max_abs_error": 0.03108839737251401,
+          "p99_abs_error": 0.006812188012991102,
+          "baseline_p99_abs_error": 0.006812188012991102,
+          "cold_microbench_us": 110.59840023517609,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.out_proj",
+      "shape": [
+        1,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.06452846294268966,
+          "baseline_max_abs_error": 0.06452846294268966,
+          "p99_abs_error": 0.007194575885077943,
+          "baseline_p99_abs_error": 0.007194575885077943,
+          "cold_microbench_us": 33.79200026392937,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.06452846294268966,
+          "baseline_max_abs_error": 0.06452846294268966,
+          "p99_abs_error": 0.007194575885077943,
+          "baseline_p99_abs_error": 0.007194575885077943,
+          "cold_microbench_us": 33.99680033326149,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 1,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.06452846294268966,
+          "baseline_max_abs_error": 0.06452846294268966,
+          "p99_abs_error": 0.007194575885077943,
+          "baseline_p99_abs_error": 0.007194575885077943,
+          "cold_microbench_us": 29.699199832975864,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 1,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.06452846294268966,
+          "baseline_max_abs_error": 0.06452846294268966,
+          "p99_abs_error": 0.007194575885077943,
+          "baseline_p99_abs_error": 0.007194575885077943,
+          "cold_microbench_us": 30.924799293279648,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.out_proj",
+      "shape": [
+        8,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.10373774543404579,
+          "baseline_max_abs_error": 0.10373774543404579,
+          "p99_abs_error": 0.007075224868895019,
+          "baseline_p99_abs_error": 0.007075224868895019,
+          "cold_microbench_us": 35.43040044605732,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.10373774543404579,
+          "baseline_max_abs_error": 0.10373774543404579,
+          "p99_abs_error": 0.007075224868895019,
+          "baseline_p99_abs_error": 0.007075224868895019,
+          "cold_microbench_us": 36.65920048952103,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 7,
+          "bit_mismatch_fraction": 0.0001708984375,
+          "max_abs_error": 0.10373774543404579,
+          "baseline_max_abs_error": 0.10373774543404579,
+          "p99_abs_error": 0.007075224868895019,
+          "baseline_p99_abs_error": 0.007075224868895019,
+          "cold_microbench_us": 30.924799293279648,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 7,
+          "bit_mismatch_fraction": 0.0001708984375,
+          "max_abs_error": 0.10373774543404579,
+          "baseline_max_abs_error": 0.10373774543404579,
+          "p99_abs_error": 0.007075224868895019,
+          "baseline_p99_abs_error": 0.007075224868895019,
+          "cold_microbench_us": 33.38240012526512,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.out_proj",
+      "shape": [
+        16,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.1169905997812748,
+          "baseline_max_abs_error": 0.1169905997812748,
+          "p99_abs_error": 0.007045524237182689,
+          "baseline_p99_abs_error": 0.007045524237182689,
+          "cold_microbench_us": 35.63200086355209,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.1169905997812748,
+          "baseline_max_abs_error": 0.1169905997812748,
+          "p99_abs_error": 0.007045524237182689,
+          "baseline_p99_abs_error": 0.007045524237182689,
+          "cold_microbench_us": 39.318398758769035,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 16,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.1169905997812748,
+          "baseline_max_abs_error": 0.1169905997812748,
+          "p99_abs_error": 0.007045524237182689,
+          "baseline_p99_abs_error": 0.007045524237182689,
+          "cold_microbench_us": 31.539199501276016,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 16,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.1169905997812748,
+          "baseline_max_abs_error": 0.1169905997812748,
+          "p99_abs_error": 0.007045524237182689,
+          "baseline_p99_abs_error": 0.007045524237182689,
+          "cold_microbench_us": 39.321598783135414,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.out_proj",
+      "shape": [
+        64,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-m64n64": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.2014158647507429,
+          "baseline_max_abs_error": 0.2014158647507429,
+          "p99_abs_error": 0.007046712533337999,
+          "baseline_p99_abs_error": 0.007046712533337999,
+          "cold_microbench_us": 58.8064007461071,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n64": {
+          "split_k": 2,
+          "bit_mismatches": 60,
+          "bit_mismatch_fraction": 0.00018310546875,
+          "max_abs_error": 0.2014158647507429,
+          "baseline_max_abs_error": 0.2014158647507429,
+          "p99_abs_error": 0.007046712533337999,
+          "baseline_p99_abs_error": 0.007046712533337999,
+          "cold_microbench_us": 48.94719943404198,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.0.linear_attn.out_proj",
+      "shape": [
+        128,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-m64n128": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.11376070789992809,
+          "baseline_max_abs_error": 0.11376070789992809,
+          "p99_abs_error": 0.007059965809457936,
+          "baseline_p99_abs_error": 0.007059965809457936,
+          "cold_microbench_us": 98.31040352582932,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n128": {
+          "split_k": 2,
+          "bit_mismatches": 135,
+          "bit_mismatch_fraction": 0.00020599365234375,
+          "max_abs_error": 0.11376070789992809,
+          "baseline_max_abs_error": 0.11376070789992809,
+          "p99_abs_error": 0.007059965809457936,
+          "baseline_p99_abs_error": 0.007059965809457936,
+          "cold_microbench_us": 74.98880326747894,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.o_proj",
+      "shape": [
+        1,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.044764676596969366,
+          "baseline_max_abs_error": 0.044764676596969366,
+          "p99_abs_error": 0.007185364540055178,
+          "baseline_p99_abs_error": 0.007185364540055178,
+          "cold_microbench_us": 33.99360030889511,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.044764676596969366,
+          "baseline_max_abs_error": 0.044764676596969366,
+          "p99_abs_error": 0.007185364540055178,
+          "baseline_p99_abs_error": 0.007185364540055178,
+          "cold_microbench_us": 34.406400471925735,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 1,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.044764676596969366,
+          "baseline_max_abs_error": 0.044764676596969366,
+          "p99_abs_error": 0.007185364540055178,
+          "baseline_p99_abs_error": 0.007185364540055178,
+          "cold_microbench_us": 30.515199340879917,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 1,
+          "bit_mismatch_fraction": 0.0001953125,
+          "max_abs_error": 0.044764676596969366,
+          "baseline_max_abs_error": 0.044764676596969366,
+          "p99_abs_error": 0.007185364540055178,
+          "baseline_p99_abs_error": 0.007185364540055178,
+          "cold_microbench_us": 30.719999223947525,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.o_proj",
+      "shape": [
+        8,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.023861665278673172,
+          "baseline_max_abs_error": 0.023861665278673172,
+          "p99_abs_error": 0.007082242214237337,
+          "baseline_p99_abs_error": 0.007082242214237337,
+          "cold_microbench_us": 34.61120054125786,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.023861665278673172,
+          "baseline_max_abs_error": 0.023861665278673172,
+          "p99_abs_error": 0.007082242214237337,
+          "baseline_p99_abs_error": 0.007082242214237337,
+          "cold_microbench_us": 36.662400886416435,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 6,
+          "bit_mismatch_fraction": 0.000146484375,
+          "max_abs_error": 0.023861665278673172,
+          "baseline_max_abs_error": 0.023861665278673172,
+          "p99_abs_error": 0.007082242214237337,
+          "baseline_p99_abs_error": 0.007082242214237337,
+          "cold_microbench_us": 29.900799691677094,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 6,
+          "bit_mismatch_fraction": 0.000146484375,
+          "max_abs_error": 0.023861665278673172,
+          "baseline_max_abs_error": 0.023861665278673172,
+          "p99_abs_error": 0.007082242214237337,
+          "baseline_p99_abs_error": 0.007082242214237337,
+          "cold_microbench_us": 32.76799991726875,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.o_proj",
+      "shape": [
+        16,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-s8": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.11300990579184145,
+          "baseline_max_abs_error": 0.11300990579184145,
+          "p99_abs_error": 0.0071199687407352006,
+          "baseline_p99_abs_error": 0.0071199687407352006,
+          "cold_microbench_us": 36.659200116992,
+          "finite": true,
+          "passed": true
+        },
+        "192-s4": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.11300990579184145,
+          "baseline_max_abs_error": 0.11300990579184145,
+          "p99_abs_error": 0.0071199687407352006,
+          "baseline_p99_abs_error": 0.0071199687407352006,
+          "cold_microbench_us": 39.52319882810116,
+          "finite": true,
+          "passed": true
+        },
+        "128-s8": {
+          "split_k": 2,
+          "bit_mismatches": 17,
+          "bit_mismatch_fraction": 0.00020751953125,
+          "max_abs_error": 0.11300990579184145,
+          "baseline_max_abs_error": 0.11300990579184145,
+          "p99_abs_error": 0.0071199687407352006,
+          "baseline_p99_abs_error": 0.0071199687407352006,
+          "cold_microbench_us": 30.71999941021204,
+          "finite": true,
+          "passed": true
+        },
+        "128-s4": {
+          "split_k": 2,
+          "bit_mismatches": 17,
+          "bit_mismatch_fraction": 0.00020751953125,
+          "max_abs_error": 0.11300990579184145,
+          "baseline_max_abs_error": 0.11300990579184145,
+          "p99_abs_error": 0.0071199687407352006,
+          "baseline_p99_abs_error": 0.0071199687407352006,
+          "cold_microbench_us": 37.887999042868614,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.o_proj",
+      "shape": [
+        64,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-m64n64": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.11823293194174767,
+          "baseline_max_abs_error": 0.11823293194174767,
+          "p99_abs_error": 0.007082468809257998,
+          "baseline_p99_abs_error": 0.007082468809257998,
+          "cold_microbench_us": 58.96320007741451,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n64": {
+          "split_k": 2,
+          "bit_mismatches": 52,
+          "bit_mismatch_fraction": 0.00015869140625,
+          "max_abs_error": 0.11823293194174767,
+          "baseline_max_abs_error": 0.11823293194174767,
+          "p99_abs_error": 0.007082468809257998,
+          "baseline_p99_abs_error": 0.007082468809257998,
+          "cold_microbench_us": 40.140799432992935,
+          "finite": true,
+          "passed": true
+        }
+      }
+    },
+    {
+      "projection": "language_model.model.layers.3.self_attn.o_proj",
+      "shape": [
+        128,
+        5120,
+        6144
+      ],
+      "candidates": {
+        "192-m64n128": {
+          "split_k": 4,
+          "bit_mismatches": 0,
+          "bit_mismatch_fraction": 0.0,
+          "max_abs_error": 0.11211787909269333,
+          "baseline_max_abs_error": 0.11211787909269333,
+          "p99_abs_error": 0.007087509991251867,
+          "baseline_p99_abs_error": 0.007087509991251867,
+          "cold_microbench_us": 98.512002825737,
+          "finite": true,
+          "passed": true
+        },
+        "128-m64n128": {
+          "split_k": 2,
+          "bit_mismatches": 116,
+          "bit_mismatch_fraction": 0.000177001953125,
+          "max_abs_error": 0.11211787909269333,
+          "baseline_max_abs_error": 0.11211787909269333,
+          "p99_abs_error": 0.007087509991251867,
+          "baseline_p99_abs_error": 0.007087509991251867,
+          "cold_microbench_us": 75.60320347547531,
+          "finite": true,
+          "passed": true
+        }
+      }
+    }
+  ],
+  "elapsed_s": 1.9286444187164307,
+  "peak_torch_allocated_bytes": 955228672,
+  "fatbin_sha256": "e648a5990d9d340ed489f4d9a5273f5712abd9ca839faed96d5fa377f09d0e22",
+  "reference": "Real affine4 tensors decoded in FP64; full-K FP64 product. Shape-fixed split reduction changes may alter FP32 rounding, so predeclared numeric bounds replace exact-baseline bits. Every timed launch follows a128MiB read/write cache-pollution pass; no claim of complete cache eviction. New quality/parity qualification still required."
+}

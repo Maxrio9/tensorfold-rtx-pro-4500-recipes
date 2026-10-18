@@ -1,0 +1,7 @@
+{
+  "maximum_error_ratio": 1.01,
+  "p99_error_ratio": 1.01,
+  "absolute_slack": 1e-07,
+  "maximum_bit_mismatch_fraction": 0.005,
+  "declaration": "Before collecting any changed-split result. Same quantized representation and BF16 outputs; FP32 reduction order changes. Finite output, maximum and p99 FP64-reference absolute errors may not exceed baseline by more than1%, with1e-7absolute slack; bit mismatch fraction at most0.5%. These finite numeric checks do not establish model quality; full functional/quality validation is required for a faster candidate."
+}

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440" role="img" aria-labelledby="title desc">
+<title id="title">Blueprint / Cobalt: Qwen3.8-27B on RTX PRO 4500</title>
+<desc id="desc">Single-stream prose/code decode, tokens per second: early recipe 92.4/121.1, before tuning 140.7/187.2, tuned 156.7/215.4. Overnight gains 11.4 percent prose and 15.1 percent code. Separate thinking-on quality checks: 153/164 HumanEval+ and 42/42 application tasks. Early CUDA integration jkuepker; native SM120 recipe BobClawblaw. TensorFold by Ash Hart.</desc>
+<rect x="0" y="0" width="1080" height="1440" rx="0" fill="#173AB5"/>
+<path d="M48 94 L48 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M130 94 L130 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M212 94 L212 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M294 94 L294 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M376 94 L376 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M458 94 L458 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M540 94 L540 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M622 94 L622 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M704 94 L704 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M786 94 L786 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M868 94 L868 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M950 94 L950 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M1032 94 L1032 514" stroke="#2448C0" stroke-width="1"/>
+<path d="M48 110 L1032 110" stroke="#2448C0" stroke-width="1"/>
+<path d="M48 192 L1032 192" stroke="#2448C0" stroke-width="1"/>
+<path d="M48 274 L1032 274" stroke="#2448C0" stroke-width="1"/>
+<path d="M48 356 L1032 356" stroke="#2448C0" stroke-width="1"/>
+<path d="M48 438 L1032 438" stroke="#2448C0" stroke-width="1"/>
+<path d="M25 95 L39 95" stroke="#E5F483" stroke-width="2"/>
+<path d="M32 88 L32 102" stroke="#E5F483" stroke-width="2"/>
+<path d="M1041 95 L1055 95" stroke="#E5F483" stroke-width="2"/>
+<path d="M1048 88 L1048 102" stroke="#E5F483" stroke-width="2"/>
+<path d="M25 1410 L39 1410" stroke="#E5F483" stroke-width="2"/>
+<path d="M32 1403 L32 1417" stroke="#E5F483" stroke-width="2"/>
+<path d="M1041 1410 L1055 1410" stroke="#E5F483" stroke-width="2"/>
+<path d="M1048 1403 L1048 1417" stroke="#E5F483" stroke-width="2"/>
+<text x="48" y="62" font-family="JetBrainsMono Nerd Font" font-size="24" fill="#E5F483" font-weight="700" text-anchor="start" letter-spacing="0">SINGLE STREAM / TENSORFOLD</text>
+<text x="1032" y="62" font-family="JetBrainsMono Nerd Font" font-size="23" fill="#CDDAFF" font-weight="400" text-anchor="end">github/Maxrio9</text>
+<text x="44" y="160" font-family="JetBrainsMono Nerd Font" font-size="70" fill="#FFFFFF" font-weight="700" text-anchor="start">Qwen3.8-27B</text>
+<text x="46" y="240" font-family="JetBrainsMono Nerd Font" font-size="65" fill="#FFFFFF" font-weight="700" text-anchor="start">RTX PRO 4500</text>
+<text x="48" y="295" font-family="JetBrainsMono Nerd Font" font-size="32" fill="#E5F483" font-weight="700" text-anchor="start">32 GB VRAM · Stock 200 W</text>
+<text x="48" y="341" font-family="JetBrainsMono Nerd Font" font-size="23" fill="#CDDAFF" font-weight="400" text-anchor="start">Affine4 / g64 · BF16 KV · DFlash2</text>
+<rect x="48" y="373" width="984" height="143" rx="0" fill="none" stroke="#E5F483" stroke-width="2"/>
+<rect x="48" y="373" width="984" height="34" rx="0" fill="#E5F483"/>
+<text x="63" y="397" font-family="JetBrainsMono Nerd Font" font-size="22" fill="#173AB5" font-weight="700" text-anchor="start">OVERNIGHT TUNING</text>
+<text x="62" y="493" font-family="JetBrainsMono Nerd Font" font-size="87" fill="#E5F483" font-weight="700" text-anchor="start">+15.1%</text>
+<text x="440" y="491" font-family="JetBrainsMono Nerd Font" font-size="29" fill="#FFFFFF" font-weight="400" text-anchor="start">code</text>
+<text x="1014" y="475" font-family="JetBrainsMono Nerd Font" font-size="66" fill="#E5F483" font-weight="700" text-anchor="end">+11.4%</text>
+<text x="1014" y="505" font-family="JetBrainsMono Nerd Font" font-size="23" fill="#FFFFFF" font-weight="400" text-anchor="end">prose</text>
+<text x="48" y="580" font-family="JetBrainsMono Nerd Font" font-size="22" fill="#CDDAFF" font-weight="700" text-anchor="start">DECODE · TOK/S</text>
+<text x="650" y="580" font-family="JetBrainsMono Nerd Font" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle">PROSE</text>
+<text x="904" y="580" font-family="JetBrainsMono Nerd Font" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="middle">CODE</text>
+<rect x="48" y="606" width="984" height="144" rx="0" fill="#254AC1" stroke="#5F7DE1" stroke-width="2"/>
+<path d="M515 606 L515 750" stroke="#173AB5" stroke-width="1"/>
+<path d="M779 606 L779 750" stroke="#173AB5" stroke-width="1"/>
+<text x="72" y="653" font-family="JetBrainsMono Nerd Font" font-size="28" fill="#FFFFFF" font-weight="700" text-anchor="start">Early recipe</text>
+<text x="72" y="693" font-family="JetBrainsMono Nerd Font" font-size="23" fill="#CDDAFF" font-weight="400" text-anchor="start">Python CUDA path</text>
+<text x="72" y="727" font-family="JetBrainsMono Nerd Font" font-size="22" fill="#CDDAFF" font-weight="400" text-anchor="start">jkuepker / TensorFold</text>
+<text x="650" y="703" font-family="JetBrainsMono Nerd Font" font-size="59" fill="#FFFFFF" font-weight="700" text-anchor="middle">92.4</text>
+<text x="904" y="703" font-family="JetBrainsMono Nerd Font" font-size="59" fill="#FFFFFF" font-weight="700" text-anchor="middle">121.1</text>
+<rect x="48" y="766" width="984" height="144" rx="0" fill="#254AC1" stroke="#5F7DE1" stroke-width="2"/>
+<path d="M515 766 L515 910" stroke="#173AB5" stroke-width="1"/>
+<path d="M779 766 L779 910" stroke="#173AB5" stroke-width="1"/>
+<text x="72" y="813" font-family="JetBrainsMono Nerd Font" font-size="28" fill="#FFFFFF" font-weight="700" text-anchor="start">Before tonight</text>
+<text x="72" y="853" font-family="JetBrainsMono Nerd Font" font-size="23" fill="#CDDAFF" font-weight="400" text-anchor="start">Native SM120 CUDA</text>
+<text x="72" y="887" font-family="JetBrainsMono Nerd Font" font-size="22" fill="#CDDAFF" font-weight="400" text-anchor="start">BobClawblaw</text>
+<text x="650" y="863" font-family="JetBrainsMono Nerd Font" font-size="59" fill="#FFFFFF" font-weight="700" text-anchor="middle">140.7</text>
+<text x="904" y="863" font-family="JetBrainsMono Nerd Font" font-size="59" fill="#FFFFFF" font-weight="700" text-anchor="middle">187.2</text>
+<rect x="48" y="926" width="984" height="174" rx="0" fill="#E5F483"/>
+<path d="M515 926 L515 1100" stroke="#173AB5" stroke-width="1"/>
+<path d="M779 926 L779 1100" stroke="#173AB5" stroke-width="1"/>
+<text x="72" y="973" font-family="JetBrainsMono Nerd Font" font-size="28" fill="#173AB5" font-weight="700" text-anchor="start">After tuning</text>
+<text x="72" y="1013" font-family="JetBrainsMono Nerd Font" font-size="23" fill="#173AB5" font-weight="400" text-anchor="start">Pipeline + Split-K</text>
+<text x="72" y="1047" font-family="JetBrainsMono Nerd Font" font-size="22" fill="#173AB5" font-weight="400" text-anchor="start">+ DFlash2 proposals</text>
+<text x="650" y="1038" font-family="JetBrainsMono Nerd Font" font-size="64" fill="#173AB5" font-weight="700" text-anchor="middle">156.7</text>
+<text x="904" y="1038" font-family="JetBrainsMono Nerd Font" font-size="64" fill="#173AB5" font-weight="700" text-anchor="middle">215.4</text>
+<text x="48" y="1157" font-family="JetBrainsMono Nerd Font" font-size="25" fill="#E5F483" font-weight="700" text-anchor="start" letter-spacing="0">QUALITY CHECK</text>
+<text x="48" y="1226" font-family="JetBrainsMono Nerd Font" font-size="55" fill="#FFFFFF" font-weight="700" text-anchor="start">153 / 164</text>
+<text x="592" y="1226" font-family="JetBrainsMono Nerd Font" font-size="55" fill="#FFFFFF" font-weight="700" text-anchor="start">42 / 42</text>
+<text x="48" y="1268" font-family="JetBrainsMono Nerd Font" font-size="24" fill="#FFFFFF" font-weight="400" text-anchor="start">HumanEval+ passed</text>
+<text x="592" y="1268" font-family="JetBrainsMono Nerd Font" font-size="20" fill="#FFFFFF" font-weight="400" text-anchor="start">Application tasks passed</text>
+<text x="48" y="1311" font-family="JetBrainsMono Nerd Font" font-size="21" fill="#CDDAFF" font-weight="400" text-anchor="start">Speed: thinking off · Quality: thinking on</text>
+<path d="M48 1341 L1032 1341" stroke="#CDDAFF" stroke-width="1"/>
+<text x="48" y="1377" font-family="JetBrainsMono Nerd Font" font-size="21" fill="#FFFFFF" font-weight="400" text-anchor="start">Tuning: 512 output · 5 repeats/task · Cache off</text>
+<text x="48" y="1413" font-family="JetBrainsMono Nerd Font" font-size="19" fill="#CDDAFF" font-weight="400" text-anchor="start">Qwen · TensorFold by Ash Hart · DFlash2 / Inco AI &amp; Z Lab</text>
+</svg>

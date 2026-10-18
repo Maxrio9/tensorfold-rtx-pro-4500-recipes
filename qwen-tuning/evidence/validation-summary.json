@@ -1,0 +1,152 @@
+{
+  "runs": [
+    {
+      "run": "20261018T071658Z-final-full164-baseline",
+      "phase": "reasoning-all",
+      "cap": 1,
+      "clients": "1",
+      "context": 8192,
+      "profiled": false,
+      "peak_device_gib": 19.640625,
+      "peak_additional_gb": 21.053308928
+    },
+    {
+      "run": "20261018T072419Z-final-full164-single",
+      "phase": "reasoning-all",
+      "cap": 1,
+      "clients": "1",
+      "context": 8192,
+      "profiled": false,
+      "peak_device_gib": 19.791015625,
+      "peak_additional_gb": 21.214789632
+    },
+    {
+      "run": "20261018T075321Z-final-heldout-baseline-single",
+      "phase": "heldout",
+      "cap": 1,
+      "clients": "1",
+      "context": 2048,
+      "profiled": false,
+      "peak_device_gib": 19.392578125,
+      "peak_additional_gb": 20.786970624,
+      "heldout": {
+        "fixture_count": 6,
+        "bursts": 12,
+        "completed_requests": 12,
+        "errors": 0,
+        "fixed_budgets_met": 12,
+        "actual_input_tokens": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          63,
+          64
+        ],
+        "actual_cached_tokens": [
+          0
+        ],
+        "mean_aggregate_across_six_prompts_tok_s": 179.91088612907737,
+        "mean_burst_median_client_decode_tok_s": 185.37764092614884,
+        "prompt_cells": [
+          {
+            "id": "heldout-code-async",
+            "aggregate_mean_tok_s": 199.41518895744076,
+            "mean_burst_median_decode_tok_s": 205.90934213613917
+          },
+          {
+            "id": "heldout-code-bst",
+            "aggregate_mean_tok_s": 219.55652608462802,
+            "mean_burst_median_decode_tok_s": 227.48900649046712
+          },
+          {
+            "id": "heldout-code-intervals",
+            "aggregate_mean_tok_s": 221.77632820394984,
+            "mean_burst_median_decode_tok_s": 229.8897528053824
+          },
+          {
+            "id": "heldout-prose-dns",
+            "aggregate_mean_tok_s": 132.6348903749482,
+            "mean_burst_median_decode_tok_s": 135.38963056972807
+          },
+          {
+            "id": "heldout-prose-orbits",
+            "aggregate_mean_tok_s": 152.2013298583426,
+            "mean_burst_median_decode_tok_s": 155.93735259006678
+          },
+          {
+            "id": "heldout-prose-transactions",
+            "aggregate_mean_tok_s": 153.88105329515471,
+            "mean_burst_median_decode_tok_s": 157.65076096510964
+          }
+        ]
+      }
+    },
+    {
+      "run": "20261018T080047Z-final-heldout-single",
+      "phase": "heldout",
+      "cap": 1,
+      "clients": "1",
+      "context": 2048,
+      "profiled": false,
+      "peak_device_gib": 19.54296875,
+      "peak_additional_gb": 20.948451328,
+      "heldout": {
+        "fixture_count": 6,
+        "bursts": 12,
+        "completed_requests": 12,
+        "errors": 0,
+        "fixed_budgets_met": 12,
+        "actual_input_tokens": [
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          63,
+          64
+        ],
+        "actual_cached_tokens": [
+          0
+        ],
+        "mean_aggregate_across_six_prompts_tok_s": 197.70173266223915,
+        "mean_burst_median_client_decode_tok_s": 204.2806098527007,
+        "prompt_cells": [
+          {
+            "id": "heldout-code-async",
+            "aggregate_mean_tok_s": 221.84205946861425,
+            "mean_burst_median_decode_tok_s": 229.94250416845398
+          },
+          {
+            "id": "heldout-code-bst",
+            "aggregate_mean_tok_s": 234.24948072188016,
+            "mean_burst_median_decode_tok_s": 243.32988783847415
+          },
+          {
+            "id": "heldout-code-intervals",
+            "aggregate_mean_tok_s": 232.46224200784783,
+            "mean_burst_median_decode_tok_s": 241.43512593682067
+          },
+          {
+            "id": "heldout-prose-dns",
+            "aggregate_mean_tok_s": 145.896930135987,
+            "mean_burst_median_decode_tok_s": 149.2683607968512
+          },
+          {
+            "id": "heldout-prose-orbits",
+            "aggregate_mean_tok_s": 179.47044035518007,
+            "mean_burst_median_decode_tok_s": 184.65772630163787
+          },
+          {
+            "id": "heldout-prose-transactions",
+            "aggregate_mean_tok_s": 172.28924328392552,
+            "mean_burst_median_decode_tok_s": 177.0500540739663
+          }
+        ]
+      }
+    }
+  ]
+}
