@@ -13,6 +13,7 @@ def main():
     p.add_argument('--hf-cache', type=pathlib.Path, help='Pinned Hugging Face hub cache, required for benchmark')
     p.add_argument('--output', type=pathlib.Path, default=pathlib.Path('new-benchmark.json'))
     p.add_argument('--gpu', type=int, default=0, help='Physical nvidia-smi GPU index')
+    p.add_argument('--allow-desktop', action='store_true', help='Allow known desktop render contexts; other compute processes still block startup')
     a = p.parse_args()
     if a.mode == 'serve' and not (a.target and a.drafter):
         p.error('serve requires --target and --drafter pinned snapshots')
@@ -21,8 +22,11 @@ def main():
     recipe = json.loads((HERE / 'recipe.json').read_text())
     def smi(*args):
         return subprocess.check_output(['nvidia-smi', '-i', str(a.gpu), *args], text=True).strip()
-    if smi('--query-compute-apps=pid', '--format=csv,noheader,nounits'):
-        raise SystemExit('GPU has a compute process; wait for an exclusive slot.')
+    desktop = {'chromium', 'chrome', 'voxtype-osd-gtk4', 'nautilus'}
+    apps = smi('--query-compute-apps=process_name', '--format=csv,noheader,nounits').splitlines()
+    busy = [name for name in apps if name.strip() and (not a.allow_desktop or pathlib.Path(name.split()[0]).name not in desktop)]
+    if busy:
+        raise SystemExit('GPU has another compute process; wait for an exclusive test slot.')
     def memory():
         return float(smi('--query-gpu=memory.used', '--format=csv,noheader,nounits'))
     baseline = memory()

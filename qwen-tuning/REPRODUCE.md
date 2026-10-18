@@ -41,14 +41,14 @@ The drafter mirrors the Inco AI release; credit the original DFlash2 authors. ML
 Replace the asset paths below with your local pinned snapshots. `run.py` reads every selected environment setting from [recipe.json](recipe.json); its `profile.flags` array is historical launcher metadata, not native CLI flags.
 
 ```sh
-python3 qwen-tuning/run.py serve \
+python3 qwen-tuning/run.py serve --allow-desktop \
   --engine ./tensorfold-tuned-src/zig-out/native/bin/tensorfold-native \
   --helpers /path/to/pinned-recipe/kernels/sm120 \
   --target /path/to/pinned-target-snapshot \
   --drafter /path/to/pinned-drafter-snapshot
 ```
 
-The service binds localhost port 19090, uses one lane, 2048-token serving capacity, BF16 KV and disabled prefix retention. The wrapper checks for other compute processes before starting, samples additional whole-GPU memory every 0.2 seconds, stops its owned process group at 26000 MiB growth and cleans up on exit. It never restores a model. Sampling is not a hard allocation guarantee; remain below **28 decimal GB additional GPU memory**. Run only in an exclusive GPU slot. Keep power, clocks, display and Compute Mode conditions consistent with the comparison you report.
+The service binds localhost port 19090, uses one lane, 2048-token serving capacity, BF16 KV and disabled prefix retention. The wrapper checks for other compute processes before starting, samples additional whole-GPU memory every 0.2 seconds, stops its owned process group at 26000 MiB growth and cleans up on exit. It never restores a model. Sampling is not a hard allocation guarantee; remain below **28 decimal GB additional GPU memory**. Run without other model/OCR compute jobs. `--allow-desktop` permits the Chromium/Chrome, voxtype OSD and Nautilus render contexts present in this desktop setup; omit it for a strict no-other-compute-process check. It does not change displays or Compute Mode. Keep power, clocks, display and Compute Mode conditions consistent with the comparison you report.
 
 ## Reproduce the graphic's 512-output workload
 
@@ -69,7 +69,7 @@ For a matching baseline, build the clean engine at the same base commit and use 
 First stop your owned service so the GPU is free. Prepare a normal HF hub cache whose target/drafter `refs/main` resolve to the exact revisions above. Then:
 
 ```sh
-python3 qwen-tuning/run.py benchmark \
+python3 qwen-tuning/run.py benchmark --allow-desktop \
   --engine ./tensorfold-tuned-src/zig-out/native/bin/tensorfold-native \
   --helpers /path/to/pinned-recipe/kernels/sm120 \
   --hf-cache /path/to/pinned-huggingface-hub-cache \
