@@ -16,8 +16,8 @@
   "baseline_tuned_prompt_hashes_match": true,
   "benchmark_functions_ast_identical_to_measured_harness": true,
   "quality_task_counts_verified": true,
-  "text_files_privacy_scanned": 31,
-  "relative_links_checked": 42,
-  "new_gpu_tests_run": false,
-  "leaderboard_upload_performed": false
+  "text_files_privacy_scanned": 36,
+  "relative_links_checked": 45,
+  "gpu_tests_executed_by_this_audit": false,
+  "leaderboard_upload_executed_by_this_audit": false
 }

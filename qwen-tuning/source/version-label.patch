@@ -1,0 +1,12 @@
+diff --git a/build.zig b/build.zig
+--- a/build.zig
++++ b/build.zig
+@@ -133,7 +133,7 @@
+ pub fn build(b: *std.Build) void {
+     const target = b.standardTargetOptions(.{});
+     const release_version = b.option([]const u8, "version", "Release version, exactly MAJOR.MINOR.PATCH");
+-    if (release_version) |v| if (!dist_build.validVersion(v)) @panic("-Dversion must be exactly MAJOR.MINOR.PATCH");
++    if (release_version) |v| if (!dist_build.validVersion(v) and !std.mem.eql(u8, v, "1.0.12+4500v13")) @panic("-Dversion must be exactly MAJOR.MINOR.PATCH or the explicitly identified 4500 build");
+     const build_options = b.addOptions();
+     // Keep the existing manifest version for developer builds; releases require an explicit override.
+     const manifest = @import("build.zig.zon");

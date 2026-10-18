@@ -52,6 +52,12 @@ These are a different fixture from the 512-output graphic: 31 chat / 14 code inp
 
 The two native receipts are preserved byte-for-byte. The executable still reports version 1.0.12; the tuned executable is modified, identified by its patch and binary hashes. These are public supporting measurements, **not newly submitted or approved leaderboard results**. A passing receipt-schema check alone does not imply upstream endorsement.
 
+## Explicitly labelled custom-engine receipt
+
+A fresh follow-up receipt uses runtime version **1.0.12+4500v13** so the leaderboard can display that it is a modified build. The inference patch and selected policy are unchanged. A separate [metadata-only build patch](source/version-label.patch) permits this one label through the upstream build script’s strict MAJOR.MINOR.PATCH check. Apply it after `tunable-v13.patch`, then build with `-Dversion=1.0.12+4500v13`.
+
+[Fresh standard receipt](receipts/tuned-custom-version-community-v1.json) · [Binary/patch hashes, conditions and cell summaries](evidence/custom-version-receipt.json). These follow-up timings have the desktop active and stay separate from the morning 512-output graphic. The earlier receipt bytes and graphic remain unchanged. Publication status, when submitted, is recorded alongside the receipts.
+
 ## Hardware and scope
 
 RTX PRO 4500 Blackwell, 32 GB, 82 SMs, stock 200 W; Compute Mode Default, ECC off, no clock changes. AM4 Ryzen 9 5900X, 32 GB DDR4-3200 and a PCIe Gen3 ×16 riser. Displays were externally disabled before this focused extension; older published receipts had active displays. Fresh native before/after controls share the extension's conditions. No controlled display-state, Compute Mode or RTX 5090 comparison was performed here.

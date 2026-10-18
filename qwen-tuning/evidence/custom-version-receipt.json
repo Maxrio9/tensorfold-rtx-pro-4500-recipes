@@ -1,0 +1,41 @@
+{
+  "receipt": "receipts/tuned-custom-version-community-v1.json",
+  "receipt_sha256": "672510001fde5bd1e4cf17a9cacc78bbe7ab5c32a06d5b3dd4092b084b1b05f4",
+  "engine_version": "1.0.12+4500v13",
+  "engine_base_commit": "bfcc84ab22669fd92586572d5e57ad10a5eea716",
+  "inference_patch_sha256": "92691453fe7d966b50ac3e9da14977e0cad743f01f5c9a638d953390c2431fb2",
+  "build_metadata_patch_sha256": "291734079f70e78db9b033295b952668cf435c4a527608e5be73caedf6136129",
+  "binary_sha256": "e2949e573c559c87f2f9346873f17ab13ee1b5814ec9deb74811e43a230fb5d5",
+  "same_sampling_suite": true,
+  "same_as_earlier_tuned_receipt_token_hashes": {
+    "matched": 20,
+    "total": 20,
+    "scope": "Finite native-provided shortened token hashes, not a proof of numerical equivalence"
+  },
+  "display_active": true,
+  "compute_mode": "Default",
+  "stock_power_w": 200,
+  "new_quality_suite_run": false,
+  "cells": [
+    {
+      "fixture": "chat",
+      "temperature": 0,
+      "median_delivery_tok_s": 152.8579432435987
+    },
+    {
+      "fixture": "chat",
+      "temperature": 1,
+      "median_delivery_tok_s": 136.90890352692637
+    },
+    {
+      "fixture": "code",
+      "temperature": 0,
+      "median_delivery_tok_s": 206.78322411524576
+    },
+    {
+      "fixture": "code",
+      "temperature": 1,
+      "median_delivery_tok_s": 258.48288550806814
+    }
+  ]
+}
