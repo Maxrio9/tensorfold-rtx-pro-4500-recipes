@@ -56,7 +56,7 @@ The two native receipts are preserved byte-for-byte. The executable still report
 
 A fresh follow-up receipt uses runtime version **1.0.12+4500v13** so the leaderboard can display that it is a modified build. The inference patch and selected policy are unchanged. A separate [metadata-only build patch](source/version-label.patch) permits this one label through the upstream build script’s strict MAJOR.MINOR.PATCH check. Apply it after `tunable-v13.patch`, then build with `-Dversion=1.0.12+4500v13`.
 
-[Fresh standard receipt](receipts/tuned-custom-version-community-v1.json) · [Binary/patch hashes, conditions and cell summaries](evidence/custom-version-receipt.json). These follow-up timings have the desktop active and stay separate from the morning 512-output graphic. The earlier receipt bytes and graphic remain unchanged. Publication status, when submitted, is recorded alongside the receipts.
+[Fresh standard receipt](receipts/tuned-custom-version-community-v1.json) · [Binary/patch hashes, conditions and cell summaries](evidence/custom-version-receipt.json). These follow-up timings have the desktop active and stay separate from the morning 512-output graphic. The earlier receipt bytes and graphic remain unchanged. This explicitly labelled receipt is **approved on the [TensorFold leaderboard](https://tensorfold.dev/benchmarks?result=d2649b12-c025-49eb-b686-3b2b6f40b60a)** under Maxrio9: greedy chat **152.9 tok/s**, greedy code **206.8 tok/s**. [Publication record](receipts/publication.json). All 20 server-supplied shortened token hashes matched the earlier tuned standard receipt; this finite check is not a universal equivalence proof.
 
 ## Hardware and scope
 

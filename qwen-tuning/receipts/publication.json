@@ -1,0 +1,11 @@
+{
+  "id": "d2649b12-c025-49eb-b686-3b2b6f40b60a",
+  "status": "approved",
+  "results_url": "https://tensorfold.dev/benchmarks?result=d2649b12-c025-49eb-b686-3b2b6f40b60a",
+  "protocol_complete": true,
+  "display_name": "Maxrio9",
+  "receipt_run_id": "320885a1-e926-4aea-9be6-6b6792e5f719",
+  "receipt_sha256": "672510001fde5bd1e4cf17a9cacc78bbe7ab5c32a06d5b3dd4092b084b1b05f4",
+  "engine_version": "1.0.12+4500v13",
+  "source_url": "https://github.com/Maxrio9/tensorfold-rtx-pro-4500-recipes/tree/main/qwen-tuning"
+}
